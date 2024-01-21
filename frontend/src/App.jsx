@@ -1,3 +1,5 @@
+import Auth from "./components/Auth/Auth";
+
 export default function App() {
-  return <div>App</div>;
+  return <Auth/>;
 }
