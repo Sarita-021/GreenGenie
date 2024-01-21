@@ -1,6 +1,6 @@
 const express = require("express");
 const morgan = require("morgan");
-
+require("dotenv").config(); // Load environment variables from .env file
 const PORT = process.env.PORT || 3001;
 
 const app = express();
