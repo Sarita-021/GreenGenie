@@ -34,6 +34,8 @@ export default function Auth() {
     return (
         <div className="auth">
             <div className="authWrapper">
+            <img src="/assets/logo.jpeg" alt="" />
+            <span></span>
                 {isLoading ? (
                     <Loader />
                 ) : (
