@@ -1,0 +1,32 @@
+nav{
+    margin: 10px;
+    border-radius: 30px;
+    padding: 10px 40px;
+    border-bottom: 2px solid rgba(112, 128, 144, 0.388);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: aliceblue;
+    font-family: sans-serif;
+}
+
+.logo{
+    margin-left: 10px;
+}
+
+.logo img{
+    width: 150px;
+    height: 50px;
+}
+
+nav ul{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+nav ul li{
+    cursor: pointer;
+    list-style: none;
+    margin: 0 10px;
+}

@@ -6,12 +6,18 @@ const Header = () => {
     return (
         <>
             <nav>
+                <div className="logo">
+                    <img src="/assets/logo.jpeg" alt="" />
+                </div>
                 <ul>
-                    <li><Link to="/">Home</Link></li>
-                    <li><Link to="/about">About</Link></li>
-                    <li><Link to="/blog">Blog</Link></li>
-                    <li><Link to="/login">Login</Link></li>
+                    <li>Dashboard</li>
+                    <li>Education</li>
+                    <li>About Us</li>
+                    <li>Contact Us</li>
                 </ul>
+                <div>
+                    <span>Login</span>
+                </div>
             </nav>
 
             <Outlet />
