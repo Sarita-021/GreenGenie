@@ -1,12 +1,11 @@
-.auth{
-    background: url("/public/assets/auth-bg.jpg");
+.auth {
     background-size: cover;
     font-family: sans-serif;
-    height: 100vh;
+    height: 80vh;
     width: 100%;
 }
 
-.authWrapper{
+.authWrapper {
     width: fit-content;
     height: 100%;
     margin: auto;
@@ -16,12 +15,12 @@
     align-items: center;
 }
 
-.authWrapper > img{
+.authWrapper>img {
     width: 300px;
     height: 100px;
 }
 
-.authWrapper > span{
+.authWrapper>span {
     width: 400px;
     height: 2px;
     background: #7580f1;
@@ -38,19 +37,19 @@
     cursor: pointer;
 }
 
-.authGoogleBtn:hover{
+.authGoogleBtn:hover {
     background-color: rgba(137, 43, 226, 0.8);
     border-bottom: 2px solid #7580f1;
     border-right: 2px solid #7580f1;
 }
 
-.authWrapper > div > img{
+.authWrapper>div>img {
     width: 30px;
     height: 30px;
     margin-right: 10px;
 }
 
-.authWrapper > div > span{
+.authWrapper>div>span {
     font-size: 22px;
     font-weight: 500;
     color: white;
