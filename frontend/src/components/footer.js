@@ -35,7 +35,7 @@ const Footer = () => {
                 <p>+91 8560XXXXXX</p>
                 <p>support@GreenGenie.com</p>
             </div>
-            <div>
+            {/* <div>
                 <h3>Quick Links</h3>
                 <nav>
                     <ul>
@@ -53,7 +53,7 @@ const Footer = () => {
                         </li>
                     </ul>
                 </nav>
-            </div>
+            </div> */}
             <p>Copyright © {new Date().getFullYear()} GreenGenie. All rights reserved.</p>
             <Outlet />
         </>
