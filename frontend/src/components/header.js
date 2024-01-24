@@ -49,7 +49,6 @@ const Header = () => {
           <span><NavLink to="/login">Login</NavLink></span>
         </div>
       </nav>
-
       <Outlet />
     </>
   );
