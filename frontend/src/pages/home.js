@@ -1,8 +1,8 @@
 import React from "react";
 import "../css/home.css";
-import "../Data/faq";
+
 import Contact_form from "../components/contact_form";
-import { blog_list, contect_details, faq, review, trends } from "../Data/faq";
+import { blog_list, contect_details, faq, review, trends } from "../Data/details";
 import Search_form from "../components/search_form";
 
 const Home = () => {
