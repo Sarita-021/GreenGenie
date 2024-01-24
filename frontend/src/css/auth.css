@@ -31,16 +31,14 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    background-color: rgba(137, 43, 226, 0.452);
+    background-color: rgba(86, 74, 255, 0.452);
     padding: 10px 19px;
-    border-radius: 100px;
+    border-radius: 10px;
     cursor: pointer;
 }
 
 .authGoogleBtn:hover {
-    background-color: rgba(137, 43, 226, 0.8);
-    border-bottom: 2px solid #7580f1;
-    border-right: 2px solid #7580f1;
+    background-color: rgba(43, 43, 226, 0.8);
 }
 
 .authWrapper>div>img {
