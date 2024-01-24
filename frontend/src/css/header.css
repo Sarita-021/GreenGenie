@@ -1,6 +1,7 @@
 nav{
-    margin: 20px;
-    border-radius: 30px;
+    z-index: 100;
+    position: sticky;
+    top: 0;
     padding: 10px 40px;
     border-bottom: 2px solid rgba(148, 189, 229, 0.388);
     border-left: 2px solid rgba(148, 189, 229, 0.388);
