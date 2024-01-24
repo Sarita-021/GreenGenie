@@ -42,7 +42,7 @@ const Home = () => {
       {/* Our Clients */}
       <div>
         <div>
-          <img className="map"></img>
+          <img className="map" alt=""/>
         </div>
         <div className="clients">
           <div>
@@ -110,7 +110,7 @@ const Home = () => {
         <div className="testimonial">
           {review.map((item, index) => (
             <div key={index}>
-              <img src="/assets/logo.jpeg" />
+              <img src="/assets/logo.jpeg"  alt=""/>
               <div className="quote">
                 <p className="name">{item.name}</p>
                 <p>{item.review}</p>
