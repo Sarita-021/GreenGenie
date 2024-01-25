@@ -1,6 +1,6 @@
 export const trends = [
     {
-        "value": "92 Million Tones",
+        "value": "92M Tons",
         "desc": "Textile Waste"
     },
     {
@@ -44,7 +44,7 @@ export const review = [
     },
 ]
 
-export const contect_details = [
+export const contact_details = [
     {
         "icon": "fas fa-envelope",
         "type": "Email:",
@@ -53,7 +53,7 @@ export const contect_details = [
     {
         "icon": "fas fa-phone-alt",
         "type": "Phone:",
-        "value": "1-555-555-5555"
+        "value": "+91-555-555-5555"
     },
     {
         "icon": "fas fa-map-marker-alt",

@@ -5,6 +5,7 @@ const dotenv = require('dotenv')
 const { connect } = require('mongoose')
 const connectDB = require('./config/db')
 const itemRoutes = require('./routes/itemRoutes')
+const userRoutes = require("./routes/userRoutes")
 
 //env config
 dotenv.config();
@@ -18,7 +19,7 @@ const app = express();
 app.use(cors())
 app.use(express.json())
 app.use(morgan("dev"));
-
+app.use('/api/v1/user', userRoutes)
 app.use('/api/v1/user', itemRoutes)
 
 app.get("/", (req, res) => {

@@ -39,7 +39,7 @@ const Header = () => {
         <ul>
           {navigation.map((item, index) => (
             <li key={index}>
-              <NavLink to={item.path} activeClassName="active">
+              <NavLink to={item.path}>
                 {item.name}
               </NavLink>
             </li>
@@ -49,7 +49,6 @@ const Header = () => {
           <span><NavLink to="/login">Login</NavLink></span>
         </div>
       </nav>
-
       <Outlet />
     </>
   );

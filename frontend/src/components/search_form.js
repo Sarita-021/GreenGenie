@@ -1,4 +1,5 @@
 import React from "react";
+import "../css/search_form.css";
 
 const Search_form = () => {
     return (
@@ -21,7 +22,7 @@ const Search_form = () => {
                     <label htmlFor="category">Category:</label>
                     <select id="category">
                         <option value="">Select Category</option>
-                        <option value="Jenes">Jenes</option>
+                        <option value="Jenes">Jeans</option>
                         <option value="Jackets">Jackets</option>
                         <option value="Shirts">Shirts</option>
                         <option value="Kurtis">Kurtis</option>
