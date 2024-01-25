@@ -4,10 +4,14 @@ const cors = require('cors')
 const dotenv = require('dotenv')
 const { connect } = require('mongoose')
 const connectDB = require('./config/db')
-const userRoutes=require("./routes/userRoutes")
+const itemRoutes = require('./routes/itemRoutes')
+const userRoutes = require("./routes/userRoutes")
 
 //env config
 dotenv.config();
+
+//mongodb connection 
+connectDB();
 
 const app = express();
 
@@ -15,9 +19,8 @@ const app = express();
 app.use(cors())
 app.use(express.json())
 app.use(morgan("dev"));
-app.use(userRoutes)
-//mongodb connection 
-connectDB();
+app.use('/api/v1/user', userRoutes)
+app.use('/api/v1/user', itemRoutes)
 
 app.get("/", (req, res) => {
     res.send("Hello from server!");
