@@ -1,8 +1,7 @@
 import React from "react";
 import "../css/home.css";
-import "../Data/faq";
 import Contact_form from "../components/contact_form";
-import { blog_list, contect_details, faq, review, trends } from "../Data/faq";
+import { blog_list, contect_details, faq, review, trends } from "../Data/details";
 import Search_form from "../components/search_form";
 
 const Home = () => {
@@ -54,7 +53,7 @@ const Home = () => {
 
                 <p>Join the GreenGenie community and give your pre-loved clothes a second life. It's easy, fun, and helps the planet!</p>
 
-                <div class="steps">
+                <div className="steps">
 
                     <h3>1. Sign Up for Free</h3>
                     <p>Register as a GreenGenie Seller - just an email and active bank account is all you need!</p>
@@ -80,14 +79,14 @@ const Home = () => {
             <div>
                 <h1>What Our Wonderful Customers Say</h1>
 
-                <div class="testimonial">
+                <div className="testimonial">
                     {review.map((item, index) => (
                         <div key={index}>
                             <img src={item.img} />
-                            <div class="quote">
-                                <p class="name">{item.name}</p>
+                            <div className="quote">
+                                <p className="name">{item.name}</p>
                                 <p>{item.review}</p>
-                                <p class="rating">⭐⭐⭐⭐⭐</p>
+                                <p className="rating">⭐⭐⭐⭐⭐</p>
                             </div>
                         </div>
                     ))}
@@ -96,20 +95,20 @@ const Home = () => {
 
 
             {/* Contact us */}
-            <div class="contact-wrap">
+            <div className="contact-wrap">
                 <h2>Connect with GreenGenie</h2>
 
                 <p>Have questions, suggestions, or just want to say hello? We'd love to hear from you! Drop us a message using the form below or reach out directly through our various channels.</p>
 
                 <Contact_form />
 
-                <div class="contact-details">
+                <div className="contact-details">
                     <h2>Get in Touch Directly</h2>
 
                     <ul>
                         {contect_details.map((item, index) => (
                             <li key={index}>
-                                <span class="icon"><i className={item.icon}></i></span>
+                                <span className="icon"><i className={item.icon}></i></span>
                                 <span>{item.type}</span>
                                 <a>{item.value}</a>
                             </li>
@@ -120,12 +119,12 @@ const Home = () => {
 
 
             {/* Recent Blogs */}
-            <div class="blog-section">
+            <div className="blog-section">
                 <h3>Dive into Sustainable Style</h3>
 
                 <h2>Explore the Latest Buzz in Eco-Conscious Fashion</h2>
 
-                <ul class="blog-list">
+                <ul className="blog-list">
                     {blog_list.map((item, index) => (
                         <li key={index}>
                             <a href={item.url}>
@@ -136,7 +135,7 @@ const Home = () => {
                     ))}
                 </ul>
 
-                <a href="/blog" class="see-more-btn">See More</a>
+                <a href="/blog" className="see-more-btn">See More</a>
             </div>
 
 
@@ -144,7 +143,7 @@ const Home = () => {
             <div>
                 <h2>Your GreenGenie FAQs Answered</h2>
 
-                <div class="faq-item">
+                <div className="faq-item">
 
                 </div>
                 {faq.map((item, index) => (
@@ -154,7 +153,7 @@ const Home = () => {
                     </li>
                 ))}
 
-                <a href="/faq" class="see-more-btn">Get More Answers</a>
+                <a href="/faq" className="see-more-btn">Get More Answers</a>
 
             </div>
 

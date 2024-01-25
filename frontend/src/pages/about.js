@@ -6,20 +6,20 @@ const About = () => {
     return (
         <>
             <h1>How To Find Us </h1>
-            <div class="contact-details">
+            <div className="contact-details">
                 <ul>
                     <li>
-                        <span class="icon"><i class="fas fa-envelope"></i></span>
+                        <span className="icon"><i className="fas fa-envelope"></i></span>
                         <span>Email:</span>
                         <a>support@greengenie.com</a>
                     </li>
                     <li>
-                        <span class="icon"><i class="fas fa-phone-alt"></i></span>
+                        <span className="icon"><i className="fas fa-phone-alt"></i></span>
                         <span>Phone:</span>
                         <a >1-555-555-5555</a>
                     </li>
                     <li>
-                        <span class="icon"><i class="fas fa-map-marker-alt"></i></span>
+                        <span className="icon"><i className="fas fa-map-marker-alt"></i></span>
                         <span>Address:</span>
                         <span>Hisar, Haryana, India</span>
                     </li>
