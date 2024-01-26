@@ -70,7 +70,7 @@ const Home = () => {
                         life. It's easy, fun, and helps the planet!
                     </p>
 
-                    <div class="steps">
+                    <div className="steps">
 
                         <h3>1. Sign Up for Free</h3>
                         <p>Register as a GreenGenie Seller - just an email and active bank account is all you need!</p>
@@ -106,14 +106,14 @@ const Home = () => {
                 <div className="feedback">
                     <h1>What Our Wonderful Customers Say</h1>
 
-                    <div class="testimonial">
+                    <div className="testimonial">
                         {review.map((item, index) => (
                             <div key={index}>
                                 <img src={item.img} />
-                                <div class="quote">
-                                    <p class="name">{item.name}</p>
+                                <div className="quote">
+                                    <p className="name">{item.name}</p>
                                     <p>{item.review}</p>
-                                    <p class="rating">⭐⭐⭐⭐⭐</p>
+                                    <p className="rating">⭐⭐⭐⭐⭐</p>
                                 </div>
                             </div>
                         ))}
@@ -122,7 +122,7 @@ const Home = () => {
 
 
                 {/* Contact us */}
-                <div class="contact-wrap">
+                <div className="contact-wrap">
                     <h2>Connect with GreenGenie</h2>
 
                     <p>
@@ -133,13 +133,13 @@ const Home = () => {
 
                     <Contact_form />
 
-                    <div class="contact-details">
+                    <div className="contact-details">
                         <h2>Get in Touch Directly</h2>
 
                         <ul>
                             {contact_details.map((item, index) => (
                                 <li key={index}>
-                                    <span class="icon"><i className={item.icon}></i></span>
+                                    <span className="icon"><i className={item.icon}></i></span>
                                     <span>{item.type}</span>
                                     <a>{item.value}</a>
                                 </li>
@@ -150,12 +150,12 @@ const Home = () => {
 
 
                 {/* Recent Blogs */}
-                <div class="blog-section">
+                <div className="blog-section">
                     <h3>Dive into Sustainable Style</h3>
 
                     <h3>Explore the Latest Buzz in Eco-Conscious Fashion</h3>
 
-                    <ul class="blog-list">
+                    <ul className="blog-list">
                         {blog_list.map((item, index) => (
                             <li key={index}>
                                 <a href={item.url}>
@@ -166,7 +166,7 @@ const Home = () => {
                         ))}
                     </ul>
 
-                    <a href="/blog" class="see-more-btn">See More</a>
+                    <a href="/blog" className="see-more-btn">See More</a>
                 </div>
 
 
@@ -174,7 +174,7 @@ const Home = () => {
                 <div className="faq">
                     <h2>GreenGenie's FAQs</h2>
 
-                    <div class="faq-item">
+                    <div className="faq-item">
 
                     </div>
                     {faq.map((item, index) => (
@@ -184,7 +184,7 @@ const Home = () => {
                         </li>
                     ))}
 
-                    <a href="/faq" class="see-more-btn">Get More Answers</a>
+                    <a href="/faq" className="see-more-btn">Get More Answers</a>
 
                 </div>
             </div>
