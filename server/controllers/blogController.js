@@ -21,8 +21,8 @@ const createBlog = async (req, res) => {
 
 const getBlog = async (req, res) => {
   try {
-    const blog = await BlogModel.find({ userId: req.params.userId });
-    res.status(200).json({ status: true, blog });
+    const blogs = await BlogModel.find();
+    res.status(200).json({ status: true, blogs });
   } catch (error) {
     console.log(error);
     res.status(500).json({ status: false, msg: "Error getting blog" });

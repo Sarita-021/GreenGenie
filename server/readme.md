@@ -8,7 +8,7 @@
 
 ### blog APIs
 > ***ROUTE:*** /api/v1/blog
-- create user : ```/create```
-- get user by userId: ```/get/user/:userId```
-- get user by firebaseUserId : ```/get/:id```
+- create blog : ```/create```
+- get all blogs: ```/get/all```
+- get blog by firebaseUserId : ```/get/id/:id```
 - delete blog : ```/delete/:id```
