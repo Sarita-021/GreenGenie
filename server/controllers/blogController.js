@@ -1,18 +1,21 @@
 const { BlogModel } = require("../models/blogModel");
-const mongoose = require("mongoose");
 
 const createBlog = async (req, res) => {
   try {
     const { title, content, images } = req.body;
-    const userId = new mongoose.Types.ObjectId(req.body.userId);
     const newBlog = new BlogModel({
-      userId,
       title,
       content,
-      images,
+      images: [
+        {
+          filename: req.file.filename,
+          originalname: req.file.originalname,
+          path: req.file.path,
+        },
+      ],
     });
     await newBlog.save();
-    res.status(201).json({ status: true, msg: "Blog created", blog: newBlog});
+    res.status(201).json({ status: true, msg: "Blog created", blog: newBlog });
   } catch (error) {
     console.log(error);
     res.status(500).json({ status: false, msg: "Error creating blog" });

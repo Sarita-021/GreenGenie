@@ -10,9 +10,19 @@ const blogSchema = new mongoose.Schema(
       type: String,
       required: true,
     },
-    images: {
-      type: Array,
-    },
+    images: [
+      {
+        filename: {
+          type: String,
+        },
+        originalname: {
+          type: String,
+        },
+        path: {
+          type: String,
+        },
+      },
+    ],
   },
   {
     timestamps: true,
