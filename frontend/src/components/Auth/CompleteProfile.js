@@ -19,7 +19,7 @@ export default function CompleteProfile({ userData }) {
     );
     console.log(resp);
     if (resp) {
-      window.location.href = "/";
+      <Navigate to="/" />;
     }
   };
 
