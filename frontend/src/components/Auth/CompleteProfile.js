@@ -1,6 +1,6 @@
 import { useEffect, useRef, useState } from "react";
 import "../../css/CompleteProfile.css";
-import { createUser } from "../../config/DB_API";
+import { createUser, setCookies } from "../../config/DB_API";
 import axios from "axios";
 import { Navigate } from "react-router-dom";
 
@@ -31,6 +31,8 @@ export default function CompleteProfile({ userData }) {
     if (user.data.msg === "user not found") {
       console.log("user not found");
       setUserExists(false);
+    }else{
+      setCookies("accessToken", user.data.user)
     }
     setIsLoading(false);
   };
