@@ -36,7 +36,7 @@ module.exports.newUser = async (req, res) => {
       // Create a new user
       const newUser = await UserModel.create(
         {
-          firebaseUserId: req.body.firebaseUserId,
+          firebaseUserId: req.body.userId,
           fullname,
           email,
           username,
