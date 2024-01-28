@@ -291,35 +291,52 @@
   text-align: center;
   margin-bottom: 15px;
 }
-
+/* get in touch */
 .contact-details {
-  margin-top: 20px;
-  margin-bottom: 20px;
+  padding: 20px;
 }
 
 .contact-details h2 {
   font-size: 2rem;
-  font-family: "Times New Roman", Times, serif;
   text-align: center;
-  margin-bottom: 15px;
+  margin-bottom: 20px;
+  color: #333;
 }
 
 .contact-details ul {
   list-style-type: none;
-  margin: 0;
   padding: 0;
+  margin: 0;
 }
 
 .contact-details li {
-  display: inline-block;
-  margin-right: 20px;
+  display: flex;
+  align-items: center;
+  margin-bottom: 15px;
 }
 
-.contact-details li span {
-  font-size: 1.3rem;
-  font-family: "Times New Roman", Times, serif;
-  margin: 10px 5px;
+.contact-details .icon {
+  margin-right: 15px;
+  font-size: 1.5rem;
+  color: #007bff; 
 }
+
+.contact-details span {
+  font-size: 1rem;
+  color: #555;
+  margin-right: 5px;
+}
+
+.contact-details a {
+  text-decoration: none;
+  color: #007bff; /* Blue color for links */
+}
+
+/* Link hover effect */
+.contact-details a:hover {
+  text-decoration: underline;
+}
+
 /*/* Recent Blogs section */
 .blog-section {
   max-width: auto;
