@@ -6,10 +6,12 @@ const {
   deleteBlog,
   getBlogById,
 } = require("../controllers/blogController");
+const multer = require("multer");
+const upload = multer({ dest: "images/" });
 
-router.route("/create").post(createBlog);
-router.route("/get/user/:userId").get(getBlog);
-router.route("/get/:id").get(getBlogById);
+router.route("/create").post(upload.single("itemImages"), createBlog);
+router.route("/get/all").get(getBlog);
+router.route("/get/id/:id").get(getBlogById);
 router.route("/delete/:id").delete(deleteBlog);
 
 module.exports = router;
