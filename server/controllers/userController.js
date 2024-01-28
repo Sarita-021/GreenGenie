@@ -13,7 +13,7 @@ module.exports.newUser = async (req, res) => {
       !username ||
       !phone ||
       !profilePicture ||
-      !address.Street ||
+      !address.street ||
       !address.city ||
       !address.district ||
       !address.state ||

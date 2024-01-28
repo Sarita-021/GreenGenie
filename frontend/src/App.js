@@ -7,6 +7,7 @@ import Footer from "./components/footer";
 import About from "./pages/about";
 import Blog from "./pages/blog";
 import AddItem from "./pages/listItem";
+import CompleteProfile from "./components/Auth/CompleteProfile";
 
 
 function App() {
@@ -22,7 +23,6 @@ function App() {
                         <Route exact path="/blog" element={<Blog />} />
                         <Route exact path="/login" element={<Auth />} />
                         <Route exact path="/item" element={<AddItem />} />
-
                     </Route>
                 </Routes>
                 <Footer />

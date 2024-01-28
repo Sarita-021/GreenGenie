@@ -1,0 +1,33 @@
+.completeProfile{
+    margin-top: 5%;
+    margin-left: 10%;
+    margin-right: 10%;
+    margin-bottom: 5%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: #fff;
+    box-shadow: 0 0 15px 4px rgba(0, 0, 0, 0.06);
+}
+
+.completeProfile h1{
+    text-align: center;
+    font-size: 2.5rem;
+    font-weight: 700;
+    margin-bottom: 2rem;
+}
+
+.completeProfile label{
+    font-size: 1.2rem;
+    font-weight: 600;
+}
+
+.completeProfile input{
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 1rem;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 1rem;
+    font-weight: 500;
+}
