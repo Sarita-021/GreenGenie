@@ -1,0 +1,106 @@
+/* about.css */
+.about{
+    background-color: #f5f5f5; 
+}
+.about-container {
+    max-width: 800px;
+    margin: auto;
+    padding: 20px;
+    font-family: 'Arial', sans-serif;
+    background-color: #f5f5f5;
+  }
+  
+  .contact-section,
+  .fashion-section,
+  .story-section,
+  .mission-section,
+  .solution-section,
+  .impact-section,
+  .movement-section,
+  .call-to-action-section {
+    margin-bottom: 30px;
+  }
+  
+  .contact-details {
+    border-bottom: 1px solid #ddd;
+    padding-bottom: 15px;
+    margin-bottom: 20px;
+  }
+  
+  .contact-details h1 {
+    font-size: 24px;
+    color: #333;
+  }
+  
+  .contact-details ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+  
+  .contact-details li {
+    margin-bottom: 10px;
+  }
+  
+  .contact-details span {
+    font-weight: bold;
+    margin-right: 10px;
+    color: #555;
+  }
+  
+  .contact-details a {
+    color: #3498db;
+    text-decoration: none;
+  }
+  
+  .fashion-section h1,
+  .contact-details h1,
+  .story-section h2,
+  .mission-section h2,
+  .solution-section h2,
+  .impact-section h2,
+  .movement-section h2,
+  .call-to-action-section h2 {
+    color: #333;
+  }
+  
+  .fashion-section h3,
+  .contact-details h3,
+  .story-section h3 {
+    color: #555;
+  }
+  
+  .icons {
+    margin-top: 20px;
+  }
+  
+  .socials {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+  }
+  
+  .socials li {
+    margin-right: 15px;
+  }
+
+  .story-section,
+  .mission-section,
+  .solution-section,
+  .impact-section,
+  .movement-section,
+  .call-to-action-section {
+    text-align: justify;
+  }
+  
+  @media (max-width: 600px) {
+    .about-container {
+      padding: 10px;
+    }
+  
+    .socials li {
+      margin-right: 10px;
+    }
+  }
+  
