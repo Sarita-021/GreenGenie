@@ -1,6 +1,6 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import "../css/header.css";
-import { Outlet, NavLink } from "react-router-dom";
+import { Outlet, NavLink, Navigate } from "react-router-dom";
 
 const navigation = [
   {
@@ -30,6 +30,16 @@ const navigation = [
 ];
 
 const Header = () => {
+  const [loginStatus, setLoginStatus] = useState(false);
+
+  useEffect(() => {
+    const data = localStorage.getItem("user");
+    console.log(data);
+    if (data) {
+      console.log("user exists");
+    }
+    setLoginStatus(true);
+  }, []);
   return (
     <>
       <nav>
@@ -39,15 +49,30 @@ const Header = () => {
         <ul>
           {navigation.map((item, index) => (
             <li key={index}>
-              <NavLink to={item.path}>
-                {item.name}
-              </NavLink>
+              <NavLink to={item.path}>{item.name}</NavLink>
             </li>
           ))}
         </ul>
-        <div>
-          <span><NavLink to="/login">Login</NavLink></span>
-        </div>
+        {loginStatus ? (
+          <NavLink
+            to={`/profile/${JSON.parse(localStorage.getItem("user"))._id}`}
+          >
+            <div className="navProfile">
+              <img
+                src={`${
+                  JSON.parse(localStorage.getItem("user")).profilePicture
+                }`}
+                alt=""
+              />
+            </div>
+          </NavLink>
+        ) : (
+          <div>
+            <span>
+              <NavLink to="/login">Login</NavLink>
+            </span>
+          </div>
+        )}
       </nav>
       <Outlet />
     </>
