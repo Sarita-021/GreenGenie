@@ -19,7 +19,7 @@ export default function CompleteProfile({ userData }) {
     );
     console.log(resp);
     if (resp) {
-      <Navigate to="/" />;
+      window.location.href = "/";
     }
   };
 
@@ -31,8 +31,8 @@ export default function CompleteProfile({ userData }) {
     if (user.data.msg === "user not found") {
       console.log("user not found");
       setUserExists(false);
-    }else{
-      setCookies("accessToken", user.data.user)
+    } else {
+      setCookies("accessToken", user.data.user);
     }
     setIsLoading(false);
   };

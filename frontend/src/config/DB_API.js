@@ -33,7 +33,7 @@ export const createUser = async (
     reqData
   );
   console.log(response);
-  setCookies("accessToken", response.data.user)
+  setCookies("accessToken", response.data.data)
   return true;
 };
 
