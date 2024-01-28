@@ -22,19 +22,6 @@ const Blog = () => {
     }
   };
 
-  //   const handleCreateBlog = async () => {
-  //     // create blog
-  //     try {
-  //       const response = await axios.post(
-  //         `${process.env.REACT_APP_SERVER_URI}/blog/create`,
-  //         blogValues.current
-  //       );
-  //       console.log(response);
-  //     } catch (err) {
-  //       console.log(err);
-  //     }
-  //   };
-
   const handleCreateBlog = async (e) => {
     e.preventDefault();
     try {
@@ -62,7 +49,7 @@ const Blog = () => {
           <p>{content}</p>
         </div>
         <div className="blogOptions">
-          <button className="blogEdit">Edit</button>
+          {/* <button className="blogEdit">Edit</button> */}
           <button className="blogDelete">Delete</button>
         </div>
         <hr />

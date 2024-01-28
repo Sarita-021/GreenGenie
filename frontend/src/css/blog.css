@@ -50,6 +50,7 @@
 .blogOptions{
     display: flex;
     justify-content: space-evenly; 
+    margin: 10px;
 }
 
 .blogEdit{
