@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import "../css/header.css";
-import { Outlet, NavLink, Navigate } from "react-router-dom";
+import { Outlet, NavLink } from "react-router-dom";
 
 const navigation = [
   {
@@ -34,11 +34,10 @@ const Header = () => {
 
   useEffect(() => {
     const data = localStorage.getItem("user");
-    console.log(data);
     if (data) {
       console.log("user exists");
+      setLoginStatus(true);
     }
-    setLoginStatus(true);
   }, []);
   return (
     <>
