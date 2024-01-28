@@ -12,8 +12,8 @@ import {
 const Footer = () => {
   return (
     <>
-      <footer class="footer">
-        <div class="container">
+      <footer className="footer">
+        <div className="container">
           <h3 className="footer-title">About us</h3>
           <p className="p">
             {" "}
@@ -22,15 +22,15 @@ const Footer = () => {
               community.
             </span>
           </p>
-          <div class="row">
-            <div class="footer-col">
+          <div className="row">
+            <div className="footer-col">
               <h4>Contact us</h4>
 
               <p>Hisar, Haryana, INDIA</p>
               <p>+91 8560XXXXXX</p>
               <p>support@GreenGenie.com</p>
             </div>
-            <div class="footer-col">
+            <div className="footer-col">
               <h4>Links</h4>
               <ul>
                 <li>
@@ -55,7 +55,7 @@ const Footer = () => {
                 </li>
               </ul>
             </div>
-            <div class="footer-col">
+            <div className="footer-col">
               <h4>follow us</h4>
               <div className="icons">
                 <ul className="socials">
