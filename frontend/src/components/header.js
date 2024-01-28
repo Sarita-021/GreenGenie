@@ -35,7 +35,6 @@ const Header = () => {
   useEffect(() => {
     const data = localStorage.getItem("user");
     if (data) {
-      console.log("user exists");
       setLoginStatus(true);
     }
   }, []);
@@ -60,6 +59,8 @@ const Header = () => {
               <img
                 src={`${
                   JSON.parse(localStorage.getItem("user")).profilePicture
+                    ? JSON.parse(localStorage.getItem("user")).profilePicture
+                    : "/assets/defaultProfile.png"
                 }`}
                 alt=""
               />

@@ -11,10 +11,10 @@ export default function CompleteProfile({ userData }) {
 
   const handleSubmit = async () => {
     const resp = await createUser(
-      userData.userId,
-      userData.fullname,
-      userData.email,
-      userData.photoURL,
+      userData?.userId,
+      userData?.fullname,
+      userData?.email,
+      userData?.photoURL,
       address.current
     );
     console.log(resp);
