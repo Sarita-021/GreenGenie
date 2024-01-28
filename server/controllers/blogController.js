@@ -7,9 +7,9 @@ const createBlog = async (req, res) => {
       title,
       content,
       image: {
-        filename: req.file.filename,
-        originalname: req.file.originalname,
-        path: req.file.path,
+        filename: req?.file?.filename,
+        originalname: req?.file?.originalname,
+        path: req?.file?.path,
       },
     });
     await newBlog.save();

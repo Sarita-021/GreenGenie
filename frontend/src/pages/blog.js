@@ -22,12 +22,28 @@ const Blog = () => {
     }
   };
 
+  const handleDeleteBlog = async (id) => {
+    document.getElementById(`${id}`).remove();
+    try {
+      const response = await axios.delete(
+        `${process.env.REACT_APP_SERVER_URI}/blog/delete/${id}`
+      );
+    } catch (err) {
+      console.log(err);
+    }
+  };
+
   const handleCreateBlog = async (e) => {
     e.preventDefault();
+    // create formdata to send to backend
+    const formData = new FormData();
+    formData.append("title", blogValues.current.title);
+    formData.append("content", blogValues.current.content);
+    formData.append("image", blogValues.current.image);
     try {
       const response = await axios.post(
         `${process.env.REACT_APP_SERVER_URI}/blog/create`,
-        blogValues.current,
+        formData,
         {
           headers: {
             "Content-Type": "multipart/form-data",
@@ -40,17 +56,19 @@ const Blog = () => {
     }
   };
 
-  const listblog = (title, image, content, key) => {
+  const listblog = (title, image, content, key, id) => {
     return (
-      <div className="blog" key={key}>
+      <div className="blog" key={key} id={id}>
         <h3>{title}</h3>
         <div>
-          {image && <img src={image} alt="blog image" />}
+          {image && <img src={`${image.path}`} alt="blog image" />}
           <p>{content}</p>
         </div>
         <div className="blogOptions">
           {/* <button className="blogEdit">Edit</button> */}
-          <button className="blogDelete">Delete</button>
+          <button className="blogDelete" onClick={() => handleDeleteBlog(id)}>
+            Delete
+          </button>
         </div>
         <hr />
       </div>
@@ -95,7 +113,7 @@ const Blog = () => {
           onChange={(e) => {
             blogValues.current = {
               ...blogValues.current,
-              image: e.target.value,
+              image: e.target.files[0],
             };
           }}
         />
@@ -114,8 +132,14 @@ const Blog = () => {
       ) : (
         <div className="blogs">
           {blogs?.length !== 0 ? (
-            blogs?.map((blog) => {
-              return listblog(blog.title, blog.image, blog.content, blog._id);
+            blogs?.map((blog, index) => {
+              return listblog(
+                blog.title,
+                blog.image,
+                blog.content,
+                index,
+                blog._id
+              );
             })
           ) : (
             <h2>No Blogs</h2>

@@ -7,9 +7,9 @@ const {
   getBlogById,
 } = require("../controllers/blogController");
 const multer = require("multer");
-const upload = multer({ dest: "images/" });
+const upload = multer({ dest: "./images" });
 
-router.route("/create").post(upload.single("blogImage"), createBlog);
+router.route("/create").post(upload.single("image"), createBlog);
 router.route("/get/all").get(getBlog);
 router.route("/get/id/:id").get(getBlogById);
 router.route("/delete/:id").delete(deleteBlog);
