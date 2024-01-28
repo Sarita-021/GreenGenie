@@ -1,0 +1,61 @@
+.blogPage{
+    width: 70%;
+    margin: auto;
+    margin-top: 2%;
+    margin-bottom: 2%;
+}
+
+.blog-form{
+    width: 70%;
+    margin: auto;
+    margin-top: 2%;
+    margin-bottom: 2%;
+}
+
+.blog-form button{
+    width: 20%;
+}
+
+.blogs{
+    margin: 10px;
+}
+
+.blog img{
+    max-width: 500px;
+    object-fit: contain;
+}
+
+.blog div{
+    display: flex;
+
+}
+
+.blog h3{
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+.blog p{
+    text-align: justify;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+.seperator h2{
+    margin-top: 10px;
+    margin-bottom: 10px;
+    text-align: center;
+}
+
+.blogOptions{
+    display: flex;
+    justify-content: space-evenly; 
+}
+
+.blogEdit{
+    background-color: blue;
+}
+
+.blogDelete{
+    background-color: red;
+}   
