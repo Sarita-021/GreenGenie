@@ -6,22 +6,31 @@
   align-items: center;
 }
 
+/* Top section  */
 .Top {
   width: 100%;
+  max-width: 1200px;
+  margin: 0 auto; 
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  padding: 40px 20px; 
+  text-align: center;
 }
 
 .Top h1 {
-  font-size: 55px;
+  font-size: 3.5rem; 
   font-family: "Times New Roman", Times, serif;
+  margin-bottom: 20px; 
+  color: #333; 
 }
 
 .Top h2 {
-  font-size: 30px;
+  font-size: 1.8rem;
   font-family: "Times New Roman", Times, serif;
+  margin-bottom: 30px; 
+  color: #555; 
 }
 
 .stats {
