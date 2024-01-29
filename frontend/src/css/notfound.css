@@ -1,0 +1,36 @@
+.notfound{
+    position: relative;
+    min-height: 50vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.notfound h1{
+    font-family: 'Montserrat', sans-serif;
+    font-size: 50px;
+    font-weight: 900;
+    margin: 0px;
+    text-transform: uppercase;
+}
+
+.notfound a{
+    font-family: 'Montserrat', sans-serif;
+    display: inline-block;
+    font-weight: 700;
+    text-decoration: none;
+    color: #fff;
+    text-transform: uppercase;
+    padding: 13px 23px;
+    background: #e6996a;
+    font-size: 18px;
+    border-radius: 40px;
+    position: relative;
+    margin-top: 15px;
+    cursor: pointer;
+}
+
+.notfound a:hover{
+    background: #333;
+}

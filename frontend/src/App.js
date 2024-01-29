@@ -8,6 +8,7 @@ import About from "./pages/about";
 import Blog from "./pages/blog";
 import AddItem from "./pages/listItem";
 import CompleteProfile from "./components/Auth/CompleteProfile";
+import NotFound from "./pages/notfound";
 
 
 function App() {
@@ -23,6 +24,7 @@ function App() {
                         <Route exact path="/blog" element={<Blog />} />
                         <Route exact path="/login" element={<Auth />} />
                         <Route exact path="/item" element={<AddItem />} />
+                        <Route path="/*" element={<NotFound />} />
                     </Route>
                 </Routes>
                 <Footer />
