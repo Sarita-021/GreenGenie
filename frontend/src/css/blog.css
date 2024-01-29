@@ -1,62 +1,84 @@
-.blogPage{
+.blogPage,
+.blog-form {
     width: 70%;
     margin: auto;
     margin-top: 2%;
     margin-bottom: 2%;
 }
 
-.blog-form{
-    width: 70%;
-    margin: auto;
-    margin-top: 2%;
-    margin-bottom: 2%;
+.blog-form label {
+    display: block;
+    margin-top: 10px;
+    margin-bottom: 5px;
 }
 
-.blog-form button{
-    width: 20%;
+.blog-form input,
+.blog-form textarea,
+.blog-form button,
+.blog-form h2 {
+    width: 100%;
+    margin-top: 5px;
+    margin-bottom: 15px;
+    padding: 8px;
+    box-sizing: border-box;
 }
 
-.blogs{
+.blog-form button {
+    background-color: #4caf50;
+    color: white;
+    cursor: pointer;
+}
+
+.blogs {
     margin: 10px;
 }
 
-.blog img{
-    max-width: 500px;
-    object-fit: contain;
+.blog {
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    padding: 10px;
+    margin-bottom: 20px;
 }
 
-.blog div{
-    display: flex;
-
-}
-
-.blog h3{
+.blog h3 {
     margin-top: 10px;
     margin-bottom: 10px;
 }
 
-.blog p{
+.blog img {
+    max-width: 100%;
+    height: auto;
+    object-fit: contain;
+}
+
+.blog p {
     text-align: justify;
     margin-top: 10px;
     margin-bottom: 10px;
 }
 
-.seperator h2{
-    margin-top: 10px;
-    margin-bottom: 10px;
+.seperator {
     text-align: center;
-}
-
-.blogOptions{
-    display: flex;
-    justify-content: space-evenly; 
     margin: 10px;
 }
 
-.blogEdit{
-    background-color: blue;
+.seperator h2 {
+    margin-top: 10px;
+    margin-bottom: 10px;
 }
 
-.blogDelete{
+.blogOptions {
+    display: flex;
+    justify-content: space-evenly;
+    margin: 10px;
+}
+
+.blogDelete {
     background-color: red;
-}   
+    color: white;
+    cursor: pointer;
+}
+
+.blogDelete:hover {
+    background-color: darkred;
+}
