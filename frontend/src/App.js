@@ -9,6 +9,7 @@ import Blog from "./pages/blog";
 import AddItem from "./pages/listItem";
 import UserProfile from "./pages/dashboard";
 import NotFound from "./pages/notfound";
+import Bot from "./pages/bot";
 import ItemDetailsForm from "./pages/itemdisplay";
 
 function App() {
@@ -23,6 +24,7 @@ function App() {
                         <Route exact path="/blog" element={<Blog />} />
                         <Route exact path="/login" element={<Auth />} />
                         <Route exact path="/item" element={<AddItem />} />
+                        <Route exact path="/bot" element={<Bot />} />
                         <Route path="/*" element={<NotFound />} />
                         <Route path="/profile" element={<UserProfile />} />
                         <Route path="/additem" element={<ItemDetailsForm />} />

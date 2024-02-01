@@ -21,6 +21,45 @@ export const trends = [
     }
 ]
 
+export const clients = [
+    {
+        "network": "Donors",
+        "count": "5000+"
+    },
+    {
+        "network": "NGO's",
+        "count": "150+"
+    },
+    {
+        "network": "",
+        "count": "100+"
+    }
+]
+
+export const steps = [
+    {
+        "number": "1. Sign Up for Free",
+        "detail": "Register as a GreenGenie Seller - just an email and active bank account is all you need!"
+    },
+    {
+        "number": "2. List Your Treasures",
+        "detail": "Upload your clothing photos and tell their story. Choose where they go: donate to NGOs or sell to recycling hubs."
+    },
+    {
+        "number": "3. Get GreenGenie Approval",
+        "detail": "Our team reviews your listings and sets fair prices for your sustainable gems."
+    },
+    {
+        "number": "4. Orders & Happy Customers",
+        "detail": "Receive notifications when someone falls in love with your clothes and confirm their order."
+    },
+    {
+        "number": "5. Secure Payments in Your Bank",
+        "detail": "GreenGenie deposits your earnings directly to your bank account - cash on delivery included!"
+    },
+]
+
+
 export const review = [
     {
         // "img": "image_url_1",

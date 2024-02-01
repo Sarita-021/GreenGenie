@@ -1,3 +1,8 @@
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script&family=Foldit&family=Lobster&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script&family=Foldit&family=Lobster&family=Stylish&display=swap');
+
+
+
 .home {
   width: 100%;
   display: flex;
@@ -9,28 +14,27 @@
 /* Top section  */
 .Top {
   width: 100%;
-  max-width: 1200px;
-  margin: 0 auto; 
+  margin: 0;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  padding: 40px 20px; 
+  padding: 40px 20px 0;
   text-align: center;
+  background-color: black;
 }
 
 .Top h1 {
-  font-size: 3.5rem; 
-  font-family: "Times New Roman", Times, serif;
-  margin-bottom: 20px; 
-  color: #333; 
+  font-size: 56px;
+  font-family: 'Stylish', sans-serif;
+  color: #ffffff;
 }
 
 .Top h2 {
-  font-size: 1.8rem;
-  font-family: "Times New Roman", Times, serif;
-  margin-bottom: 30px; 
-  color: #555; 
+  font-size: 28px;
+  font-family: 'Dancing Script', cursive;
+  margin-bottom: 30px;
+  color: #d9d9d9;
 }
 
 .stats {
@@ -43,7 +47,7 @@
   padding: 20px;
 }
 
-.stats > h2 {
+.stats>h2 {
   margin-top: 10px;
   font-size: 35px;
   font-family: "Times New Roman", Times, serif;
@@ -51,7 +55,7 @@
   color: gray;
 }
 
-.stats > h3 {
+.stats>h3 {
   font-size: 22px;
   font-family: "Times New Roman", Times, serif;
   margin-bottom: 20px;
@@ -71,7 +75,7 @@
   margin: 10px;
 }
 
-.stats li > div {
+.stats li>div {
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -99,7 +103,7 @@
   color: blueviolet;
 }
 
-.home > div {
+.home>div {
   width: 100%;
   display: flex;
   flex-direction: column;
@@ -117,7 +121,7 @@
   margin: 0 20px;
 }
 
-.clients > div {
+.clients>div {
   width: 200px;
   height: 200px;
   display: flex;
@@ -129,7 +133,7 @@
   border-radius: 20px;
 }
 
-.clients > div > p {
+.clients>div>p {
   font-size: 2rem;
   font-family: "Times New Roman", Times, serif;
   text-align: center;
@@ -148,7 +152,7 @@
   background-color: rgb(237, 244, 255);
 }
 
-.sell > h2 {
+.sell>h2 {
   font-size: 2rem;
   font-family: "Times New Roman", Times, serif;
   text-align: center;
@@ -156,7 +160,7 @@
   margin-bottom: 15px;
 }
 
-.sell > p {
+.sell>p {
   font-size: 1.5rem;
   font-family: "Times New Roman", Times, serif;
   text-align: center;
@@ -173,7 +177,7 @@
   margin: 0 20px;
 }
 
-.steps > h3 {
+.steps>h3 {
   font-size: 1.6rem;
   font-family: "Times New Roman", Times, serif;
   /* text-align: center; */
@@ -182,7 +186,7 @@
   margin-bottom: 15px;
 }
 
-.steps > p {
+.steps>p {
   width: 500px;
   font-size: 1.4rem;
   font-family: "Times New Roman", Times, serif;
@@ -208,6 +212,7 @@
   color: rgb(34, 19, 19);
   border-bottom: 2px solid blue;
 }
+
 /* Feedback and testinomials */
 .feedback {
   width: 80%;
@@ -229,7 +234,7 @@
   justify-content: center;
 }
 
-.testimonial > div {
+.testimonial>div {
   width: 300px;
   margin: 20px;
   padding: 20px;
@@ -239,11 +244,11 @@
   transition: transform 0.3s ease;
 }
 
-.testimonial > div:hover {
+.testimonial>div:hover {
   transform: scale(1.05);
 }
 
-.testimonial > div > img {
+.testimonial>div>img {
   width: 140px;
   height: 140px;
   object-fit: cover;
@@ -251,20 +256,20 @@
   margin-bottom: 15px;
 }
 
-.quote > .name {
+.quote>.name {
   font-size: 1.5rem;
   font-family: "Times New Roman", Times, serif;
   margin-bottom: 10px;
   color: #007bff;
 }
 
-.quote > p {
+.quote>p {
   font-size: 1.2rem;
   margin-bottom: 15px;
   color: #555;
 }
 
-.quote > .rating {
+.quote>.rating {
   font-size: 1.5rem;
   color: #f2c94c;
 }
@@ -280,7 +285,7 @@
   margin: 0 20px;
 }
 
-.contact-wrap > h2 {
+.contact-wrap>h2 {
   font-size: 2.8rem;
   font-family: "Times New Roman", Times, serif;
   text-align: center;
@@ -288,13 +293,14 @@
   color: blue;
 }
 
-.contact-wrap > p {
+.contact-wrap>p {
   width: 50%;
   font-size: 1.5rem;
   font-family: "Times New Roman", Times, serif;
   text-align: center;
   margin-bottom: 15px;
 }
+
 /* get in touch */
 .contact-details {
   padding: 20px;
@@ -333,7 +339,8 @@
 
 .contact-details a {
   text-decoration: none;
-  color: #007bff; /* Blue color for links */
+  color: #007bff;
+  /* Blue color for links */
 }
 
 /* Link hover effect */
@@ -379,7 +386,8 @@
 /* Blog post title styling */
 .blog-list li a {
   text-decoration: none;
-  color: #007bff; /* Blue color for links */
+  color: #007bff;
+  /* Blue color for links */
 }
 
 /* Blog post title hover effect */
@@ -399,14 +407,16 @@
   padding: 10px 20px;
   margin-top: 20px;
   text-decoration: none;
-  background-color: #007bff; /* Blue color for the button */
+  background-color: #007bff;
+  /* Blue color for the button */
   color: #fff;
   border-radius: 5px;
   transition: background-color 0.3s ease;
 }
 
 .see-more-btn:hover {
-  background-color: #0056b3; /* Darker blue color on hover */
+  background-color: #0056b3;
+  /* Darker blue color on hover */
 }
 
 /* FAQ QUESTIONS */
