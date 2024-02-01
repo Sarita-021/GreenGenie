@@ -74,7 +74,7 @@ const AddItem = () => {
 
 
     return (
-        <>
+        <div className="listitem">
             <form onSubmit={handleSubmit}>
                 <label className="label" htmlFor="itemFashion">Fashion Style:</label>
                 <select className="input" onChange={handleChange} value={inputs.itemFashion} id="itemFashion" name="itemFashion" required>
@@ -138,7 +138,7 @@ const AddItem = () => {
                 <button type="submit" value="submit">Add Item</button>
             </form>
 
-        </>
+        </div>
     )
 }
 

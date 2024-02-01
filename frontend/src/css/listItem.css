@@ -1,4 +1,4 @@
-/* form {
+.listitem form {
     display: flex;
     flex-direction: column;
     width: 500px;
@@ -8,14 +8,14 @@
     border-radius: 5px;
 }
 
-label {
+.listitem label {
     margin-bottom: 5px;
     font-weight: bold;
 }
 
-input[type="text"],
-input[type="file"],
-textarea {
+.listitem input[type="text"],
+.listitem input[type="file"],
+.listitem textarea {
     width: 100%;
     padding: 10px;
     border: 1px solid #ccc;
@@ -24,7 +24,7 @@ textarea {
     resize: vertical;
 }
 
-select {
+.listitem select {
     width: 100%;
     padding: 10px;
     border: 1px solid #ccc;
@@ -32,7 +32,7 @@ select {
     margin-bottom: 15px;
 }
 
-button {
+.listitem button {
     background-color: #4CAF50;
     color: white;
     padding: 10px 20px;
@@ -41,6 +41,6 @@ button {
     cursor: pointer;
 }
 
-button:hover {
+.listitem button:hover {
     background-color: #449A44;
-} */
+}

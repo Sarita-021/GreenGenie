@@ -3,15 +3,12 @@ import "../css/search_form.css";
 
 const Search_form = () => {
     return (
-        // <div className="searchForm-cont">
         <form className="search-form">
             <div class="form-row">
                 <div className="field">
-                    {/* <label htmlFor="location">Location:</label> */}
                     <input type="text" id="location" placeholder="Enter Your City" />
                 </div>
                 <div className="field">
-                    {/* <label htmlFor="type">Type:</label> */}
                     <select id="type">
                         <option value="">Gender</option>
                         <option value="Kids">Kids</option>
@@ -20,7 +17,6 @@ const Search_form = () => {
                     </select>
                 </div>
                 <div className="field">
-                    {/* <label htmlFor="category">Category:</label> */}
                     <select id="category">
                         <option value="">Categories</option>
                         <option value="Jenes">Jeans</option>
@@ -33,7 +29,6 @@ const Search_form = () => {
                 <button type="submit">Search Accumulator</button>
             </div>
         </form>
-        // </div>
     )
 }
 
