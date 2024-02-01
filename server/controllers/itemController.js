@@ -6,13 +6,16 @@ const fs = require('fs');
 const express = require('express');
 const multer = require('multer')
 const upload = multer({ dest: 'uploads/' })
-
+const { UserModel } = require("../models/usermodel");
 
 
 // Create a new item
 exports.newItemController = async (req, res, next) => {
     try {
-
+        const username = req.body.Username;
+        const User = await UserModel.findOne({ username: username });
+        // const user = await UserModel.findOne({ UserId: UserId });
+        // console.log(user)
         const itemFashion = req.body.itemFashion;
         const itemSize = req.body.itemSize;
         const itemCategory = req.body.itemCategory;
@@ -35,16 +38,17 @@ exports.newItemController = async (req, res, next) => {
         console.log(req.body, req.file);
         // validation 
 
-        const newItem = new itemModel({ itemFashion, itemSize, itemCategory, itemGender, itemBrand, itemFabric, itemPriceRange, itemQuality, itemMotive, itemDescription, itemImages });
+        const newItem = new itemModel({ username, itemFashion, itemSize, itemCategory, itemGender, itemBrand, itemFabric, itemPriceRange, itemQuality, itemMotive, itemDescription, itemImages });
         console.log(newItem);
         const savedItem = await newItem.save();
         return res.status(201).send({
             success: true,
-            message: 'New user Created'
+            message: 'New item Created'
         })
         // res.status(201);
     } catch (err) {
         console.error(err);
+        console.log(err);
         res.status(400).json({ message: 'error in backend' });
     }
 };

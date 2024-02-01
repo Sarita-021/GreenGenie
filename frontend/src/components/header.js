@@ -1,82 +1,113 @@
 import React, { useEffect, useState } from "react";
 import "../css/header.css";
-import { Outlet, NavLink } from "react-router-dom";
+import { Outlet, NavLink, useNavigate } from "react-router-dom";
 
+// import { Navigate } from "react-router-dom";
 const navigation = [
-  {
-    name: "Home",
-    path: "/",
-  },
-  {
-    name: "Dashboard",
-    path: "/dashboard",
-  },
-  {
-    name: "Education",
-    path: "/education",
-  },
-  {
-    name: "Blog",
-    path: "/blog",
-  },
-  {
-    name: "About Us",
-    path: "/about",
-  },
-  {
-    name: "Contact Us",
-    path: "/contact",
-  },
+    {
+        name: "Home",
+        path: "/",
+    },
+    {
+        name: "Dashboard",
+        path: "/dashboard",
+    },
+    {
+        name: "Education",
+        path: "/education",
+    },
+    {
+        name: "Blog",
+        path: "/blog",
+    },
+    {
+        name: "About Us",
+        path: "/about",
+    },
+    {
+        name: "Contact Us",
+        path: "/contact",
+    },
 ];
 
-const Header = () => {
-  const [loginStatus, setLoginStatus] = useState(false);
 
-  useEffect(() => {
-    const data = localStorage.getItem("user");
-    if (data) {
-      setLoginStatus(true);
+const Header = () => {
+    const navigate = useNavigate();
+
+    let isLogin = localStorage.getItem('islogin');
+    const logout = () => {
+        localStorage.clear();
+        navigate("/")
     }
-  }, []);
-  return (
-    <>
-      <nav>
-        <div className="logo">
-          <img src="/assets/logo.jpeg" alt="" />
-        </div>
-        <ul>
+    console.log(isLogin)
+
+    useEffect(() => {
+        const data = localStorage.getItem("user");
+        console.log(data)
+    }, []);
+    return (
+        <>
+            <nav>
+                <div className="logo">
+                    <img src="/assets/logo.jpeg" alt="" />
+                </div>
+                {/* <ul>
           {navigation.map((item, index) => (
             <li key={index}>
               <NavLink to={item.path}>{item.name}</NavLink>
             </li>
           ))}
-        </ul>
-        {loginStatus ? (
-          <NavLink
-            to={`/profile/${JSON.parse(localStorage.getItem("user"))._id}`}
-          >
-            <div className="navProfile">
-              <img
-                src={`${
-                  JSON.parse(localStorage.getItem("user")).profilePicture
-                    ? JSON.parse(localStorage.getItem("user")).profilePicture
-                    : "/assets/defaultProfile.png"
-                }`}
-                alt=""
-              />
-            </div>
-          </NavLink>
-        ) : (
-          <div>
-            <span>
-              <NavLink to="/login">Login</NavLink>
-            </span>
-          </div>
-        )}
-      </nav>
-      <Outlet />
-    </>
-  );
+        </ul> */}
+                {isLogin ? (
+                    <>
+                        <ul>
+                            {navigation.map((item, index) => (
+                                <li key={index}>
+                                    <NavLink to={item.path}>{item.name}</NavLink>
+                                </li>
+                            ))}
+                            <NavLink to="/item" >Item</NavLink>
+                        </ul>
+
+                        <NavLink component="/dashboard"
+                            to={`/profile/${JSON.parse(localStorage.getItem("user")).username}`}
+                        >
+                            <NavLink>
+                                <button className="btn-warning" onClick={logout}>Logout</button>
+                            </NavLink>
+
+                            <div className="navProfile">
+                                <img
+                                    src={`${JSON.parse(localStorage.getItem("user")).profilePicture
+                                        ? JSON.parse(localStorage.getItem("user")).profilePicture
+                                        : "/assets/defaultProfile.png"
+                                        }`}
+                                    alt=""
+                                />
+                            </div>
+                        </NavLink>
+                    </>
+                ) : (
+                    <>
+                        <ul>
+                            {navigation.map((item, index) => (
+                                <li key={index}>
+                                    <NavLink to={item.path}>{item.name}</NavLink>
+                                </li>
+                            ))}
+                        </ul>
+                        <div>
+                            <span>
+                                <NavLink to="/login">Login</NavLink>
+                            </span>
+                        </div>
+
+                    </>
+                )}
+            </nav>
+            <Outlet />
+        </>
+    );
 };
 
 export default Header;

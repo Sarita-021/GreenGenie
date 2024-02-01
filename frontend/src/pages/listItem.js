@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import "../css/listItem.css";
 import { useNavigate } from "react-router-dom";
 import axios from "axios";
@@ -9,19 +9,7 @@ const AddItem = () => {
         e.preventDefault();
         try {
             const formData = new FormData();
-            // formData.append(inputs);
-            // formData = {
-            //     itemFashion: inputs.itemFashion,
-            //     itemSize: inputs.itemSize,
-            //     itemCategory: inputs.itemCategory,
-            //     itemGender: inputs.itemGender,
-            //     itemBrand: inputs.itemBrand,
-            //     itemFabric: inputs.itemFabric,
-            //     itemPriceRange: inputs.itemPriceRange,
-            //     itemQuality: inputs.itemQuality,
-            //     itemMotive: inputs.itemMotive,
-            //     itemDesciption: inputs.itemDescription
-            // }
+            formData.append("Username", JSON.parse(localStorage.getItem("user")).username);
             formData.append("itemFashion", inputs.itemFashion);
             formData.append("itemSize", inputs.itemSize);
             formData.append("itemCategory", inputs.itemCategory);
@@ -33,7 +21,7 @@ const AddItem = () => {
             formData.append("itemMotive", inputs.itemMotive);
             formData.append("itemDesciption", inputs.itemDescription);
             formData.append("itemImages", file);
-            const { data } = await axios.post('/addItem', formData, { headers: { 'Content-Type': 'multipart/form-data' } }
+            const { data } = await axios.post('/item/addItem', formData, { headers: { 'Content-Type': 'multipart/form-data' } }
                 // 
             );
             if (data.success) {
@@ -41,11 +29,15 @@ const AddItem = () => {
                 navigate("/");
             }
         } catch (error) {
+            console.log(error);
             alert(error.response.data.message);
             console.log(error.response.data.message);
         }
     }
-
+    useEffect(() => {
+        const data = localStorage.getItem("user");
+        console.log(" i am here")
+    }, []);
     const navigate = useNavigate();
 
     const [inputs, setInputs] = useState({
