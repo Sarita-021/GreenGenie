@@ -68,10 +68,6 @@ const itemSchema = new mongoose.Schema({
     itemDescription: {
         type: String,
     },
-    // userId: {
-    //     type: mongoose.Schema.Types.ObjectId,
-    //     ref: 'User', // Assuming a User model exists
-    // },
     createdAt: {
         type: Date,
         default: Date.now,

@@ -1,16 +1,11 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect } from "react";
 import "../css/header.css";
 import { Outlet, NavLink, useNavigate } from "react-router-dom";
 
-// import { Navigate } from "react-router-dom";
 const navigation = [
     {
         name: "Home",
         path: "/",
-    },
-    {
-        name: "Dashboard",
-        path: "/dashboard",
     },
     {
         name: "Education",
@@ -43,7 +38,6 @@ const Header = () => {
 
     useEffect(() => {
         const data = localStorage.getItem("user");
-        console.log(data)
     }, []);
     return (
         <>
@@ -51,13 +45,6 @@ const Header = () => {
                 <div className="logo">
                     <img src="/assets/logo.jpeg" alt="" />
                 </div>
-                {/* <ul>
-          {navigation.map((item, index) => (
-            <li key={index}>
-              <NavLink to={item.path}>{item.name}</NavLink>
-            </li>
-          ))}
-        </ul> */}
                 {isLogin ? (
                     <>
                         <ul>
@@ -66,16 +53,16 @@ const Header = () => {
                                     <NavLink to={item.path}>{item.name}</NavLink>
                                 </li>
                             ))}
-                            <NavLink to="/item" >Item</NavLink>
+                            <li>
+                                <NavLink to={`/item/${JSON.parse(localStorage.getItem("user")).data.username}`}> Item Display</NavLink>
+                                <NavLink to="/item" >Item </NavLink>
+                            </li>
                         </ul>
+                        <NavLink>
+                            <button className="btn-warning" onClick={logout}>Logout</button>
+                        </NavLink>
 
-                        <NavLink component="/dashboard"
-                            to={`/profile/${JSON.parse(localStorage.getItem("user")).username}`}
-                        >
-                            <NavLink>
-                                <button className="btn-warning" onClick={logout}>Logout</button>
-                            </NavLink>
-
+                        <NavLink to="/profile" >
                             <div className="navProfile">
                                 <img
                                     src={`${JSON.parse(localStorage.getItem("user")).profilePicture

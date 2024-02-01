@@ -1,10 +1,11 @@
 const { UserModel } = require("../models/usermodel");
 
+// Create New User Route 
+
 module.exports.newUser = async (req, res) => {
     try {
         const { fullname, email, username, phone, profilePicture, address } =
             req.body;
-        console.log(req.body);
 
         // Validate that required fields are present
         if (
@@ -13,12 +14,7 @@ module.exports.newUser = async (req, res) => {
             !username ||
             !phone ||
             !profilePicture ||
-            !address.street ||
-            !address.city ||
-            !address.district ||
-            !address.state ||
-            !address.nationality ||
-            !address.pincode
+            !address
         ) {
             return res
                 .status(406)
@@ -42,19 +38,9 @@ module.exports.newUser = async (req, res) => {
                     username,
                     phone,
                     profilePicture,
-                    address: {
-                        Street: address.Street,
-                        city: address.city,
-                        district: address.district,
-                        state: address.state,
-                        nationality: address.nationality,
-                        pincode: address.pincode,
-                    },
+                    address
                 },
             );
-
-            // res.redirect("/username")
-            // Send a response indicating success
             res.status(201).json({
                 success: true,
                 message: "Profile completed successfully",
@@ -67,34 +53,30 @@ module.exports.newUser = async (req, res) => {
     }
 };
 
+
+// update user route
+
 module.exports.profile = async (req, res) => {
     try {
-        const { fullname, email, phone, profilePicture, address } =
-            req.body; // Extract specific fields
-        console.log("got encountered")
-        console.log(req.params.username)
-        const user = await UserModel.findByIdAndUpdate(req.params.username, {
-            ...(fullname && { fullname }),
-            ...(email && { email }),
-            ...(phone && { phone }),
-            ...(profilePicture && { email }),
-            ...(address.street && { Street }),
-            ...(address.city && { city }),
-            ...(address.district && { district }),
-            ...(address.state && { state }),
-            ...(address.nationality && { nationality }),
-            ...(address.pincode && { pincode })
-            // ...updatedData, // Update other fields if provided
-        }, { new: true }); // Return updated user
-        console.log(user);
+        const username = req.params.username;
+        const user = await UserModel.findOne({ username: username })
+        if (user) {
+            user.fullname = req.body.fullname || user.fullname;
+            user.email = req.body.email || user.email;
+            user.phone = req.body.phone || user.phone;
+            user.profilePicture = req.body.profilePicture || user.name;
+            user.address = req.body.address || user.address;
+        }
+
+        const updatedUser = await user.save();
         if (!user) {
             return res.status(404).json({ message: 'User not found' });
         }
 
         res.status(201).json({
             success: true,
-            message: "Profile completed successfully",
-            data: newUser,
+            message: "Profile updated successfully",
+            data: updatedUser,
         });
     } catch (err) {
         console.error(err);
@@ -102,38 +84,47 @@ module.exports.profile = async (req, res) => {
     }
 };
 
-module.exports.getUser = async (req, res) => {
+// user route to get user using email to check if user is already registered
+
+module.exports.allemail = async (req, res) => {
     const email = req.params.email;
+    console.log(email)
     try {
         const user = await UserModel.findOne({ email: email });
         if (user) {
-            // res.render("/")
-            console.log(user, " i am backend");
             res.status(200).send({ status: true, data: user });
         } else {
-            res.status(200).send({ status: false, msg: "user not found" });
+            res.status(200).send({ status: false, msg: "user not found through email" });
         }
     } catch (err) {
         res.status(400).send({ status: false, error: "cannot get user data" });
     }
 };
-module.exports.getUserdata = async (req, res) => {
+
+// user route to get details of user using username 
+
+module.exports.getallUserName = async (req, res) => {
     const username = req.params.username;
-    console.log(username)
-    console.log("isdfjkjsdfjkds")
     try {
         const user = await UserModel.findOne({ username: username });
         if (user) {
-            // res.render("/")
-            console.log(user, " i am backend");
-            res.status(200).send({ status: true, data: user });
+            res.status(200).send({
+                status: true, data: {
+                    fullname: user.fullname,
+                    email: user.email,
+                    phone: user.phone,
+                    address: user.address
+                }
+            });
         } else {
-            res.status(200).send({ status: false, msg: "user not found" });
+            res.status(200).send({ status: false, msg: "user not found through username" });
         }
     } catch (err) {
-        res.status(400).send({ status: false, error: "cannot get user data" });
+        res.status(400).send({ status: false, error: "cannot get user data using username " });
     }
 };
+
+// user route to verify using firebaseUserId 
 
 module.exports.getUserByFId = async (req, res) => {
     const firebaseUserId = req.params.firebaseUserId;

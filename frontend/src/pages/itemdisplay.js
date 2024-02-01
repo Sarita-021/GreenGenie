@@ -18,10 +18,9 @@ function ItemDetailsForm() {
 
     useEffect(() => {
         const fetchItemDetails = async () => {
-            // Replace '/api/items/:id' with your actual backend endpoint
-            const response = await axios.get('/api/items/:id');
-            const data = response.data;
-            setItemDetails(data);
+            var userData = JSON.parse(localStorage.getItem("user")).data.username
+            const response = await axios.get(`${process.env.REACT_APP_SERVER_URI}/item/${userData}`); // Replace with your backend endpoint
+            console.log(response);
         };
 
         fetchItemDetails();
@@ -34,7 +33,6 @@ function ItemDetailsForm() {
 
     const handleSubmit = async (event) => {
         event.preventDefault();
-        // Implement logic to submit the edited details to the backend
     };
 
     return (

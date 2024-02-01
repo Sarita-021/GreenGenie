@@ -9,9 +9,8 @@ import CompleteProfile from "./CompleteProfile";
 
 export default function Auth() {
     const [isLoading, setIsLoading] = useState(false);
-
     const [userData, setUserData] = useState();
-    console.log("got encountered first")
+
     const handleSignIn = () => {
         console.log("ksjfdk");
         setIsLoading(true);

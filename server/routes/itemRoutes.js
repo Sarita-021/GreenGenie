@@ -5,11 +5,11 @@ const multer = require('multer')
 const upload = multer({ dest: 'images/' })
 
 
-const { getAllController, getOneController, newItemController, updateItemController, deleteItemController } = require('../controllers/itemController');
+const { userItems, AllItems, newItemController, updateItemController, deleteItemController } = require('../controllers/itemController');
 
-router.get("/item", getAllController);
+router.get("/:username", userItems);
 
-router.get("/item/:id", getOneController);
+router.get("/item/:username", AllItems);
 
 router.post("/addItem", upload.single('itemImages'), newItemController);
 

@@ -7,15 +7,7 @@ function UserProfile() {
         fullname: '',
         email: '',
         phone: '',
-        profilePicture: '',
-        address: {
-            Street: '',
-            city: '',
-            district: '',
-            state: '',
-            nationality: '',
-            pincode: '',
-        },
+        address: ''
     })
 
     const [isLoading, setIsLoading] = useState(false);
@@ -25,31 +17,29 @@ function UserProfile() {
         const fetchUser = async () => {
             setIsLoading(true);
             try {
-                console.log("jiei")
-                // const data = localStorage.getItem("user");
-                // console.log(data.)
-                const response = await axios.get(`/user/:${JSON.parse(localStorage.getItem("user")).username}`); // Replace with your backend endpoint
-                console.log(response.data);
-                console.log(response.msg)
-                // const userData = await response.json();
-                // setUser(userData);
+                const response = await axios.get(`${process.env.REACT_APP_SERVER_URI}/user/username/${JSON.parse(localStorage.getItem("user")).data.username}`); // Replace with your backend endpoint
+                console.log(response.data, "data in response.data");
+                const userData = response.data;
+                console.log(userData, "data stored in userData")
+                setUser((user) => Object.assign({}, user, { fullname: userData.data.fullname, email: userData.data.email, phone: userData.data.phone, address: userData.data.address }))
+                console.log(user, " data after updating  ");
             } catch (error) {
                 setError(error);
+                console.log(error, "no data error in url");
             } finally {
                 setIsLoading(false);
             }
+            console.log(user, " data after updating  ");
         };
 
         fetchUser();
     }, []);
 
-    // useEffect(() => {
-
-    //     console.log(JSON.parse(localStorage.getItem("user")));
-    // }, []);
-
-    const handleChange = (event) => {
-        setUser({ ...user, [event.target.name]: event.target.value });
+    const handleChange = (e) => {
+        setUser((prevState) => ({
+            ...prevState,
+            [e.target.name]: e.target.value
+        }));
     };
 
     const handleSubmit = async (event) => {
@@ -57,50 +47,38 @@ function UserProfile() {
         setIsLoading(true);
         try {
             console.log("got rendered")
-            const response = await axios.put('/user/:username', user);
+            const response = await axios.post(`${process.env.REACT_APP_SERVER_URI}/user/${JSON.parse(localStorage.getItem("user")).username}`, user);
             const updatedUser = response.data;
             if (response.success) {
-                alert("item added successfully");
-                // navigate("/");
+                alert("updated successfully");
             }
-            setUser(updatedUser);
+            setUser((updatedUser));
         } catch (error) {
             console.log(error);
         } finally {
             setIsLoading(false);
         }
     };
+    console.log(user, "data in user state")
 
     return (
         <form onSubmit={handleSubmit}>
+            {isLoading && <p>Loading user data...</p>}
             {/* ... (loading and error messages) */}
 
             <label htmlFor="fullname">Full Name:</label>
-            <input type="text" id="fullname" name="fullname" value={user.fullname} onChange={handleChange} />
+            <input type="text" id="fullname" name="fullname" placeholder={user.fullname} value={user?.fullname} onChange={handleChange} />
 
             <label htmlFor="email">Email:</label>
-            <input type="email" id="email" name="email" value={user.email} onChange={handleChange} />
-
-            {/* <label htmlFor="username">Username:</label>
-            <input type="text" id="username" name="username" value={user.username} onChange={handleChange} /> */}
+            <input type="email" id="email" name="email" placeholder={user.email} value={user?.email} onChange={handleChange} />
 
             <label htmlFor="phone">Phone:</label>
-            <input type="tel" id="phone" name="phone" value={user.phone} onChange={handleChange} />
+            <input type="tel" id="phone" name="phone" placeholder={user.phone} value={user?.phone} onChange={handleChange} />
 
             {/* Profile picture handling (e.g., file upload or image preview) */}
 
-            <label htmlFor="Street">Street:</label>
-            <input type="text" id="Street" name="address.Street" value={user.address.Street} onChange={handleChange} />
-            <label htmlFor="city">City:</label>
-            <input type="text" id="city" name="address.city" value={user.address.city} onChange={handleChange} />
-            <label htmlFor="state">State:</label>
-            <input type="text" id="state" name="address.state" value={user.address.state} onChange={handleChange} />
-            <label htmlFor="district">District:</label>
-            <input type="text" id="district" name="address.district" value={user.address.district} onChange={handleChange} />
-            <label htmlFor="nationality">Nationality:</label>
-            <input type="text" id="nationality" name="address.nationality" value={user.address.nationality} onChange={handleChange} />
-            <label htmlFor="pincode">Pincode:</label>
-            <input type="text" id="pincode" name="address.pincode" value={user.address.pincode} onChange={handleChange} />
+            <label htmlFor="address">Address:</label>
+            <input type="text" id="address" name="address" placeholder={user.address} value={user?.address} onChange={handleChange} />
 
             {/* ... (Other address fields) */}
 
