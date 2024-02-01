@@ -14,9 +14,8 @@ const Home = () => {
           <h1>GreenGenie</h1>
           <h2>Wastemakers - Dress the part, be the change.</h2>
           <img src="/assets/img1.png" alt="" />
-
+          <Search_form />
         </div>
-        <Search_form />
 
         {/* Top Recycling partners  */}
         <div className="stats">

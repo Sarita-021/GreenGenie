@@ -1,4 +1,4 @@
-form {
+/* form {
     display: flex;
     flex-direction: column;
     width: 500px;
@@ -22,7 +22,6 @@ textarea {
     border-radius: 3px;
     margin-bottom: 15px;
     resize: vertical;
-    /* Allow resizing textarea */
 }
 
 select {
@@ -44,4 +43,4 @@ button {
 
 button:hover {
     background-color: #449A44;
-}
+} */
