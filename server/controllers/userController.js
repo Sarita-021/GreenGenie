@@ -26,7 +26,7 @@ module.exports.newUser = async (req, res) => {
     }
 
     const user = await UserModel.findOne({
-      firebaseUserId: req.body.firebaseUserId,
+      firebaseUserId: req.body?.userId,
     });
     if (user && user.profileCompleted) {
       return res
@@ -57,7 +57,7 @@ module.exports.newUser = async (req, res) => {
       res.status(201).json({
         success: true,
         message: "Profile completed successfully",
-        data: newUser,
+        user: newUser,
       });
     }
   } catch (error) {
@@ -71,7 +71,7 @@ module.exports.getUser = async (req, res) => {
   try {
     const user = await UserModel.findOne({ email: email });
     if (user) {
-      res.status(200).send({ status: true, user });
+      res.status(200).send({ status: true, user: user });
     } else {
       res.status(200).send({ status: false, msg: "user not found" });
     }
