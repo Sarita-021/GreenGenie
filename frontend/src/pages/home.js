@@ -11,10 +11,12 @@ const Home = () => {
     <>
       <div className="home">
         <div className="Top">
-          <h1>Welcome to GreenGenie</h1>
-          <h2>Make a difference today: GreenGenie - Wear the change you want to see.</h2>
-          <Search_form />
+          <h1>GreenGenie</h1>
+          <h2>Wastemakers - Dress the part, be the change.</h2>
+          <img src="/assets/img1.png" alt="" />
+
         </div>
+        <Search_form />
 
         {/* Top Recycling partners  */}
         <div className="stats">
