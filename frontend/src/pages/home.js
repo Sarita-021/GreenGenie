@@ -2,13 +2,7 @@ import React from "react";
 import "../css/home.css";
 
 import Contact_form from "../components/contact_form";
-import {
-  blog_list,
-  contact_details,
-  faq,
-  review,
-  trends,
-} from "../Data/details";
+import { blog_list, clients, steps, contact_details, faq, review, trends } from "../Data/details";
 import Search_form from "../components/search_form";
 import { NavLink } from "react-router-dom";
 
@@ -18,10 +12,7 @@ const Home = () => {
       <div className="home">
         <div className="Top">
           <h1>Welcome to GreenGenie</h1>
-          <h2>
-            Make a difference today: GreenGenie - Wear the change you want to
-            see.
-          </h2>
+          <h2>Make a difference today: GreenGenie - Wear the change you want to see.</h2>
           <Search_form />
         </div>
 
@@ -44,63 +35,34 @@ const Home = () => {
         {/* Our Clients */}
         <div>
           <div>
-            <img className="map" alt="" />
+            <h1>Our Network</h1>
           </div>
           <div className="clients">
-            <div>
-              <p>Donors</p>
-              <p>5000+</p>
-            </div>
-            <div>
-              <p>NGOs</p>
-              <p>150+</p>
-            </div>
-            <div>
-              <p>Recycling Factories</p>
-              <p>100+</p>
-            </div>
+            {clients.map((item, index) => (
+              <div key={index}>
+                <div>
+                  <p className="value">{item.network}</p>
+                  <p className="desc">{item.count}</p>
+                </div>
+              </div>
+            ))}
           </div>
         </div>
 
         {/* div containing detalils about selling clothes online */}
         <div className="sell">
           <h2>Become a GreenGenie Seller & Make Sustainability Pay!</h2>
-
-          <p>
-            Join the GreenGenie community and give your pre-loved clothes a
-            second life. It's easy, fun, and helps the planet!
-          </p>
+          <p>Join the GreenGenie community and give your pre-loved clothes a second life. It's easy, fun, and helps the planet! </p>
 
           <div className="steps">
-            <h3>1. Sign Up for Free</h3>
-            <p>
-              Register as a GreenGenie Seller - just an email and active bank
-              account is all you need!
-            </p>
-
-            <h3>2. List Your Treasures</h3>
-            <p>
-              Upload your clothing photos and tell their story. Choose where
-              they go: donate to NGOs or sell to recycling hubs.
-            </p>
-
-            <h3>3. Get GreenGenie Approval</h3>
-            <p>
-              Our team reviews your listings and sets fair prices for your
-              sustainable gems.
-            </p>
-
-            <h3>4. Orders & Happy Customers</h3>
-            <p>
-              Receive notifications when someone falls in love with your clothes
-              and confirm their order.
-            </p>
-
-            <h3>5. Secure Payments in Your Bank</h3>
-            <p>
-              GreenGenie deposits your earnings directly to your bank account -
-              cash on delivery included!
-            </p>
+            {steps.map((item, index) => (
+              <div key={index}>
+                <div>
+                  <p className="value">{item.number}</p>
+                  <p className="desc">{item.detail}</p>
+                </div>
+              </div>
+            ))}
           </div>
           <NavLink to="/login">
             Ready to join the movement? Sign up today!
@@ -128,12 +90,7 @@ const Home = () => {
         {/* Contact us */}
         <div className="contact-wrap">
           <h2>Connect with GreenGenie</h2>
-
-          <p>
-            Have questions, suggestions, or just want to say hello? We'd love to
-            hear from you! Drop us a message using the form below or reach out
-            directly through our various channels.
-          </p>
+          <p>Have questions, suggestions, or just want to say hello? We'd love to hear from you! Drop us a message using the form below or reach out directly through our various channels. </p>
 
           <Contact_form />
 
@@ -157,7 +114,6 @@ const Home = () => {
         {/* Recent Blogs */}
         <div className="blog-section">
           <h3>Dive into Sustainable Style</h3>
-
           <h3>Explore the Latest Buzz in Eco-Conscious Fashion</h3>
 
           <ul className="blog-list">
