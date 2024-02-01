@@ -9,6 +9,7 @@ import Blog from "./pages/blog";
 import AddItem from "./pages/listItem";
 import CompleteProfile from "./components/Auth/CompleteProfile";
 import NotFound from "./pages/notfound";
+import Bot from "./pages/bot";
 
 
 function App() {
@@ -24,6 +25,7 @@ function App() {
                         <Route exact path="/blog" element={<Blog />} />
                         <Route exact path="/login" element={<Auth />} />
                         <Route exact path="/item" element={<AddItem />} />
+                        <Route exact path="/bot" element={<Bot />} />
                         <Route path="/*" element={<NotFound />} />
                     </Route>
                 </Routes>
