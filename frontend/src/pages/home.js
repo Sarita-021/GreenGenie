@@ -80,7 +80,7 @@ const Home = () => {
                 {/* Customer feedback  */}
                 <div className="feedback">
                     <div className="heading">
-                        <p> Our Donor</p>
+                        <p> Our Donors</p>
                         <h1>What are our clients saying about us</h1>
                     </div>
                     <div className="testimonial">
