@@ -24,7 +24,7 @@ export const createUser = async (
         reqData
     );
     console.log(response);
-    setCookies("accessToken", response.data.data)
+    setCookies("accessToken", response.data)
     return true;
 };
 

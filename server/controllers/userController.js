@@ -131,7 +131,7 @@ module.exports.getUserByFId = async (req, res) => {
     try {
         console.log("ksdkjf")
         const user = await UserModel.findOne({ firebaseUserId: firebaseUserId });
-        res.status(200).send({ data: user });
+        res.status(200).send({ status: true, data: user });
     } catch (err) {
         res.status(400).send({ error: "not found" });
     }

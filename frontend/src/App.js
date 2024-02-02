@@ -8,6 +8,7 @@ import About from "./pages/about";
 import Blog from "./pages/blog";
 import AddItem from "./pages/listItem";
 import UserProfile from "./pages/dashboard";
+import CompleteProfile from "./components/Auth/CompleteProfile";
 import NotFound from "./pages/notfound";
 import Bot from "./pages/bot";
 import ItemDetailsForm from "./pages/itemdisplay";

@@ -65,8 +65,8 @@ const Header = () => {
                         <NavLink to="/profile" >
                             <div className="navProfile">
                                 <img
-                                    src={`${JSON.parse(localStorage.getItem("user")).profilePicture
-                                        ? JSON.parse(localStorage.getItem("user")).profilePicture
+                                    src={`${JSON.parse(localStorage.getItem("user")).data.profilePicture
+                                        ? JSON.parse(localStorage.getItem("user")).data.profilePicture
                                         : "/assets/defaultProfile.png"
                                         }`}
                                     alt=""
