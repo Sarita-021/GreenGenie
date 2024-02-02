@@ -52,6 +52,7 @@
 .stats .container {
   background-color: rgba(0, 0, 0, 0.5);
   padding: 30px 5% 70px;
+  width: 100%;
 }
 
 .stats .container h2 {
