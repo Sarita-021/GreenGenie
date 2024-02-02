@@ -36,19 +36,44 @@ const Home = () => {
                 </div>
 
                 {/* Our Network */}
-                <div>
-                    <div>
-                        <h1>Our Network</h1>
-                    </div>
-                    <div className="network">
-                        {clients.map((item, index) => (
-                            <div key={index}>
-                                <div>
-                                    <p className="value">{item.network}</p>
-                                    <p className="desc">{item.count}</p>
+                <div className="network">
+                    <div className="container">
+                        <div className="network-top">
+                            <div className="top-left">
+                                <h4>Our Network</h4>
+                                <h1>Explore Most of Us</h1>
+                            </div>
+                            <div className="top-right">
+                                <div className="donor">
+                                    <div className="box">
+                                        <p>Top Donor</p>
+                                        <div>Henry Moore</div>
+                                    </div>
+                                </div>
+                                <div className="ngo">
+                                    <div className="box">
+                                        <p>Top-rated NGO</p>
+                                        <div>Threads of Life</div>
+                                    </div>
+                                </div>
+                                <div className="factory">
+                                    <div className="box">
+                                        <p>Top-rated Factory</p>
+                                        <div>ReMake Magic</div>
+                                    </div>
                                 </div>
                             </div>
-                        ))}
+                        </div>
+                        <div className="network-bottom">
+                            {clients.map((item, index) => (
+                                <div key={index}>
+                                    <div className="clients">
+                                        <p className="desc"><span>{item.count}</span> {item.network}</p>
+                                        {/* <p className="value">{item.network}</p> */}
+                                    </div>
+                                </div>
+                            ))}
+                        </div>
                     </div>
                 </div>
 

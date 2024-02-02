@@ -1,8 +1,5 @@
-@import url('https://fonts.googleapis.com/css2?family=Dancing+Script&family=Foldit&family=Lobster&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Dancing+Script&family=Foldit&family=Lobster&family=Stylish&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Alegreya&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Jost&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Alegreya&family=Dancing+Script&family=Jost&family=Merriweather:ital@0;1&family=Roboto&family=Stylish&display=swap');
+
 
 
 .home {
@@ -113,34 +110,108 @@
 /* network section */
 
 .network {
+  height: auto;
   width: 100%;
-  display: flex;
-  justify-content: space-evenly;
-  align-items: center;
-  flex-wrap: wrap;
-  padding: 20px;
-  margin: 0 20px;
+  padding: 40px 30px;
 }
 
-.network>div {
+.network .container {
+  background-color: antiquewhite;
+  border-radius: 25px;
+  padding: 60px;
+}
+
+.network .network-top {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.network .network-top .top-left {
+  margin-right: 10px;
+}
+
+.network .network-top .top-left h4 {
+  color: rgb(174, 107, 63);
+}
+
+.network .network-top .top-left h1 {
+  color: rgb(88, 35, 0);
+  font-size: 40px;
+  font-family: 'Merriweather', serif;
+}
+
+.network .network-top .top-right {
+  display: flex;
+  justify-content: space-around;
+  flex-direction: row;
+  margin-left: 30px;
+}
+
+.network .network-top .top-right .box {
   width: 200px;
-  height: 200px;
+  height: 300px;
+  background-color: rgba(0, 0, 0, 0.35);
+  color: #fff;
+  font-family: "roboto", sans-serif;
+  padding: 15px;
   display: flex;
   flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  border: 1px solid slateblue;
-  padding: 20px;
-  border-radius: 20px;
 }
 
-.network>div>p {
-  font-size: 2rem;
-  font-family: "Times New Roman", Times, serif;
-  text-align: center;
-  color: green;
-  margin-bottom: 15px;
+.network .network-top .top-right .box div {
+  margin-top: auto;
+  font-size: 20px;
+  font-weight: bolder;
+  align-items: baseline;
 }
+
+.network .network-top .top-right .box:hover {
+  background-color: rgba(0, 0, 0, 0);
+}
+
+.network .network-top .top-right .donor,
+.network .network-top .top-right .ngo,
+.network .network-top .top-right .factory {
+  width: 200px;
+  height: 300px;
+  border-radius: 10px;
+  margin-left: 7px;
+  overflow: hidden;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+.network .network-top .top-right .donor {
+  background-image: url(/public/assets/man.jpeg);
+}
+
+.network .network-top .top-right .ngo {
+  background-image: url(/public/assets/ngo.jpeg);
+}
+
+.network .network-top .top-right .factory {
+  background-image: url(/public/assets/factory.jpeg);
+}
+
+.network .network-bottom {
+  margin: 90px 5% 30px;
+  display: flex;
+  justify-content: space-around;
+}
+
+.network .network-bottom .clients .desc {
+  font-family: 'Merriweather', serif;
+  color: #696969;
+}
+
+.network .network-bottom .clients .desc span {
+  color: #452820;
+  font-family: "Merriweather", Sans-serif;
+  font-size: 40px;
+  font-weight: 400;
+}
+
 
 .sell {
   width: 100%;

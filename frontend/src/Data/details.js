@@ -24,15 +24,15 @@ export const trends = [
 export const clients = [
     {
         "network": "Donors",
-        "count": "5000+"
+        "count": "5K"
     },
     {
         "network": "NGO's",
-        "count": "150+"
+        "count": "100+"
     },
     {
-        "network": "",
-        "count": "100+"
+        "network": "Factories",
+        "count": "150+"
     }
 ]
 
