@@ -35,9 +35,9 @@ export default function CompleteProfile({ userData }) {
         } else {
             setCookies("accessToken", user.data);
             navigate("/");
-            setIsLoading(false);
             localStorage.setItem("islogin", true);
         }
+        setIsLoading(false);
         return;
     };
 
