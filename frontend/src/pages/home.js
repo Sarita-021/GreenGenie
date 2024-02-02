@@ -4,6 +4,7 @@ import Contact_form from "../components/contact_form";
 import { blog_list, clients, contact_details, faq, review, trends } from "../Data/details";
 import Search_form from "../components/search_form";
 import { NavLink } from "react-router-dom";
+import { AiFillStar } from "react-icons/ai";
 
 const Home = () => {
     return (
@@ -78,21 +79,49 @@ const Home = () => {
 
                 {/* Customer feedback  */}
                 <div className="feedback">
-                    <h1>What Our Wonderful Customers Say</h1>
-
+                    <div className="heading">
+                        <p> Our Donor</p>
+                        <h1>What are our clients saying about us</h1>
+                    </div>
                     <div className="testimonial">
                         {review.map((item, index) => (
-                            <div key={index}>
-                                <img src={item.img} />
+                            <div key={index} className="main-container">
+                                <div className="t-container">
+                                    <img src={item.img} />
+                                    <div>
+                                        <p className="name">{item.name}</p>
+                                        <p className="subname">{item.subname}</p>
+                                    </div>
+                                </div>
                                 <div className="quote">
-                                    <p className="name">{item.name}</p>
                                     <p>{item.review}</p>
-                                    <p className="rating">⭐⭐⭐⭐⭐</p>
+                                    <p className="rating"><AiFillStar /><AiFillStar /><AiFillStar /><AiFillStar /><AiFillStar /></p>
                                 </div>
                             </div>
                         ))}
                     </div>
                 </div>
+
+                {/* Recent Blogs */}
+                {/* <div className="blog-section">
+                    <h3>Dive into Sustainable Style</h3>
+                    <h3>Explore the Latest Buzz in Eco-Conscious Fashion</h3>
+
+                    <ul className="blog-list">
+                        {blog_list.map((item, index) => (
+                            <li key={index}>
+                                <a href={item.url}>
+                                    <h2>{item.title}</h2>
+                                </a>
+                                <p>Uncover the story&nbsp;&rarr;</p>
+                            </li>
+                        ))}
+                    </ul>
+
+                    <a href="/blog" className="see-more-btn">
+                        See More
+                    </a>
+                </div> */}
 
                 {/* Contact us */}
                 <div className="contact-wrap">
@@ -118,26 +147,6 @@ const Home = () => {
                     </div>
                 </div>
 
-                {/* Recent Blogs */}
-                <div className="blog-section">
-                    <h3>Dive into Sustainable Style</h3>
-                    <h3>Explore the Latest Buzz in Eco-Conscious Fashion</h3>
-
-                    <ul className="blog-list">
-                        {blog_list.map((item, index) => (
-                            <li key={index}>
-                                <a href={item.url}>
-                                    <h2>{item.title}</h2>
-                                </a>
-                                <p>Uncover the story&nbsp;&rarr;</p>
-                            </li>
-                        ))}
-                    </ul>
-
-                    <a href="/blog" className="see-more-btn">
-                        See More
-                    </a>
-                </div>
 
                 {/* freqently asked questions */}
                 <div className="faq">
@@ -155,7 +164,7 @@ const Home = () => {
                         Get More Answers
                     </a>
                 </div>
-            </div>
+            </div >
         </>
     );
 };

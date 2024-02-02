@@ -38,25 +38,23 @@ export const clients = [
 
 export const review = [
     {
-        // "img": "image_url_1",
+        "img": "/assets/woman.png",
         "name": "Sarah Jones",
+        "subname": "Happy Donors",
         "review": "GreenGenie made selling my unwanted clothes a breeze! Their team was helpful and supportive throughout the process."
     },
     {
-        // "img": "image_url_1",
+        "img": "/assets/man.png",
         "name": "Michael Smith",
-        "review": "Thrilled with my experience with GreenGenie! My clothes found new homes while I made some extra cash and helped the planet. Win-win!"
+        "subname": "Happy Donors",
+        "review": "Thrilled to share my experience with GreenGenie!!! Clothes gone, Cash made, Earth smiled, Felt great, Did good."
     },
     {
-        // "img": "image_url_1",
+        "img": "/assets/woman2.png",
         "name": "Emily Davies",
-        "review": "GreenGenie is a fantastic platform for giving my pre-loved clothes a second life. I feel good knowing they're not going to waste, and the process was incredibly smooth."
-    },
-    {
-        // "img": "image_url_1",
-        "name": "David Miller",
-        "review": "GreenGenie exceeded my expectations! I was skeptical at first, but their commitment to sustainability and customer service won me over."
-    },
+        "subname": "Happy Donors",
+        "review": "GreenGenie!! I was skeptical at first, but their commitment to sustainability and customer service won me over."
+    }
 ]
 
 export const contact_details = [

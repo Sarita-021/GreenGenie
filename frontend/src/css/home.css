@@ -215,15 +215,23 @@
 
 /* Feedback and testinomials */
 .feedback {
-  width: 80%;
+  width: 100%;
   margin: 0 auto;
   padding: 40px 20px;
-  text-align: center;
+  text-align: left;
 }
 
-.feedback h1 {
-  font-size: 2.5rem;
-  font-family: "Times New Roman", Times, serif;
+.feedback .heading {
+  margin-left: 80px;
+}
+
+.feedback .heading p {
+  color: #AB978A;
+}
+
+.feedback .heading h1 {
+  font-size: 40px;
+  font-family: "Merriweather", Sans-serif;
   margin-bottom: 30px;
   color: #333;
 }
@@ -234,44 +242,56 @@
   justify-content: center;
 }
 
-.testimonial>div {
+.testimonial .main-container {
   width: 300px;
-  margin: 20px;
-  padding: 20px;
-  border: 1px solid #ddd;
+  margin: 10px;
+  padding: 20px 20px 10px;
+  border: 1px solid #ffffff;
   border-radius: 10px;
-  text-align: center;
-  transition: transform 0.3s ease;
+  text-align: left;
+  font-family: "roboto", sans-serif;
+  line-height: 1.25rem;
+  box-shadow: 0px 10px 31px 0px rgba(107, 104, 102, 0.153);
 }
 
-.testimonial>div:hover {
+.testimonial .main-container:hover {
   transform: scale(1.05);
 }
 
-.testimonial>div>img {
-  width: 140px;
-  height: 140px;
+.testimonial .t-container {
+  display: flex;
+  align-items: center;
+  margin-bottom: 26px;
+}
+
+.testimonial .t-container img {
+  width: 40px;
+  height: 40px;
   object-fit: cover;
   border-radius: 50%;
-  margin-bottom: 15px;
+  margin-right: 20px;
 }
 
-.quote>.name {
-  font-size: 1.5rem;
-  font-family: "Times New Roman", Times, serif;
+.testimonial .t-container .name {
+  font-family: "roboto", sans-serif;
+  font-size: 15px;
+  font-weight: bold;
+}
+
+.testimonial .t-container .subname {
+  font-size: 12px;
+  color: #636363;
+}
+
+.quote p {
+  font-size: 12px;
   margin-bottom: 10px;
-  color: #007bff;
+  color: #636363;
 }
 
-.quote>p {
-  font-size: 1.2rem;
-  margin-bottom: 15px;
-  color: #555;
-}
-
-.quote>.rating {
-  font-size: 1.5rem;
-  color: #f2c94c;
+.quote .rating {
+  font-size: 14px;
+  color: #fdcd3e;
 }
 
 /* "contact form  */
