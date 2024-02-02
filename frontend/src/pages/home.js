@@ -19,26 +19,28 @@ const Home = () => {
 
                 {/* Top Recycling partners  */}
                 <div className="stats">
-                    <h2>Yearly Disturbing Trends</h2>
-                    <h3>Unraveling Your Wardrobe: The Shocking Story of Your Clothes</h3>
-                    <ul>
-                        {trends.map((item, index) => (
-                            <li key={index}>
-                                <div>
-                                    <p className="value">{item.value}</p>
-                                    <p className="desc">{item.desc}</p>
-                                </div>
-                            </li>
-                        ))}
-                    </ul>
+                    <div className="container">
+                        <h2>Fashion's Dirty Runway</h2>
+                        <h3>Quantifying the Waste in Fast Fashion</h3>
+                        <ul>
+                            {trends.map((item, index) => (
+                                <li key={index}>
+                                    <div>
+                                        <p className="text"><span>{item.value}</span> {item.desc}</p>
+                                        {/* <p className="desc">{item.desc}</p> */}
+                                    </div>
+                                </li>
+                            ))}
+                        </ul>
+                    </div>
                 </div>
 
-                {/* Our Clients */}
+                {/* Our Network */}
                 <div>
                     <div>
                         <h1>Our Network</h1>
                     </div>
-                    <div className="clients">
+                    <div className="network">
                         {clients.map((item, index) => (
                             <div key={index}>
                                 <div>

@@ -1,24 +1,24 @@
 export const trends = [
     {
-        "value": "92M Tons",
-        "desc": "Textile Waste"
-    },
-    {
-        "value": "10%",
-        "desc": "Of Microplastic Dispersed in Ocean from textiles"
-    },
-    {
         "value": "85%",
         "desc": "Clothes Ends in Landfills"
+    },
+    {
+        "value": "92M",
+        "desc": "Tons Textile Waste"
     },
     {
         "value": "1%",
         "desc": "Clothes get Recycled"
     },
     {
-        "value": "10K L - 20K L",
+        "value": "15K L",
         "desc": "Of Water to produce 1kg Cotton"
-    }
+    },
+    {
+        "value": "10%",
+        "desc": "of Ocean Microplastics come from Textiles."
+    },
 ]
 
 export const clients = [
