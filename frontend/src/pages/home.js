@@ -1,8 +1,7 @@
 import React from "react";
 import "../css/home.css";
-
 import Contact_form from "../components/contact_form";
-import { blog_list, clients, steps, contact_details, faq, review, trends } from "../Data/details";
+import { blog_list, clients, contact_details, faq, review, trends } from "../Data/details";
 import Search_form from "../components/search_form";
 import { NavLink } from "react-router-dom";
 
@@ -75,26 +74,6 @@ const Home = () => {
                             ))}
                         </div>
                     </div>
-                </div>
-
-                {/* div containing detalils about selling clothes online */}
-                <div className="sell">
-                    <h2>Become a GreenGenie Seller & Make Sustainability Pay!</h2>
-                    <p>Join the GreenGenie community and give your pre-loved clothes a second life. It's easy, fun, and helps the planet! </p>
-
-                    <div className="steps">
-                        {steps.map((item, index) => (
-                            <div key={index}>
-                                <div>
-                                    <p className="value">{item.number}</p>
-                                    <p className="desc">{item.detail}</p>
-                                </div>
-                            </div>
-                        ))}
-                    </div>
-                    <NavLink to="/login">
-                        Ready to join the movement? Sign up today!
-                    </NavLink>
                 </div>
 
                 {/* Customer feedback  */}
