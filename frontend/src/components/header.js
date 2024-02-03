@@ -61,7 +61,7 @@ const Header = () => {
                             <button className="btn-warning" onClick={logout}>Logout</button>
                         </NavLink>
 
-                        <NavLink to="/profile" >
+                        <NavLink to={`/profile/${JSON.parse(localStorage.getItem("user"))?.firebaseUserId}`} >
                             <div className="navProfile">
                                 <img
                                     src={`${JSON.parse(localStorage.getItem("user"))?.profilePicture
