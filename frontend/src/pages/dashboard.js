@@ -3,9 +3,10 @@ import Loader from "../components/Loader/Loader";
 import "../css/dashboard.css";
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
+import EditProfile from "../components/EditProfile";
 
 export default function Dashboard() {
-  const {userId} = useParams();
+  const { userId } = useParams();
   const [user, setUser] = useState(null);
   const [error, setError] = useState(null);
   const [loading, setLoading] = useState(true);
@@ -76,7 +77,7 @@ export default function Dashboard() {
         </div>
       </div>
       <div className="dashboardRight">
-        
+        <EditProfile />
       </div>
     </div>
   );
