@@ -1,48 +1,161 @@
-/* body {
-    font-family: Arial, sans-serif;
-    margin: 20px;
+.dashboard {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 92vh;
+  background-color: #000;
+  color: white;
 }
 
-form {
-    width: 500px;
-    border: 1px solid #ddd;
-    border-radius: 5px;
-    padding: 20px;
+.dashboardLeft {
+  width: 25%;
+  height: 100%;
+  background-color: #000;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
-label {
-    display: block;
-    margin-bottom: 5px;
-    font-weight: bold;
+.dashboardRight {
+  width: 75%;
+  height: 100%;
+  background-color: #0f0f0f;
+  color: white;
 }
 
-input,
-select {
-    width: 100%;
-    padding: 10px;
-    border: 1px solid #ccc;
-    border-radius: 3px;
-    margin-bottom: 15px;
+.dashboardLeftUserDetails {
+  width: 90%;
+  margin-top: 10%;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  margin-bottom: 20px;
 }
 
-.address-group {
-    border-top: 1px solid #eee;
-    padding-top: 15px;
+.dashboardLeftUserDetails span {
+  font-size: 16px;
+  margin-left: 10px;
+  color: #ccc;
+  font-weight: bold;
 }
 
-.address-group label {
-    margin-bottom: 10px;
+.dashboardLeftUserDetailsImage {
+  width: 100%;
+  text-align: center;
 }
 
-button {
-    background-color: #4CAF50;
-    color: white;
-    padding: 10px 20px;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
+.dashboardLeftUserDetailsImage img {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  border: 2px solid white;
 }
 
-button:hover {
-    background-color: #449A44;
-} */
+.dashboardLeftUserDetailsFullname {
+  width: 100%;
+  font-size: 18px;
+  margin-top: 10px;
+}
+
+.dashboardLeftUserDetailsUsername {
+  width: 100%;
+  font-size: 18px;
+  margin-top: 10px;
+}
+
+.dashboardLeftUserDetailsEmail {
+  width: 100%;
+  font-size: 18px;
+  margin-top: 10px;
+}
+
+.dashboardLeftUserDetailsPhone {
+  width: 100%;
+  font-size: 18px;
+  margin-top: 10px;
+}
+
+.dashboardLeftUserDetailsAddress {
+  width: 100%;
+  font-size: 18px;
+  margin-top: 10px;
+}
+
+.dashboardLeftUserProfileAction {
+  width: 90%;
+  margin: auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 20px;
+}
+
+.dashboardLeftUserProfileAction button {
+  padding: 10px 20px;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  color: #000;
+  font-size: 16px;
+  font-weight: bold;
+  transition: 0.3s;
+  border-radius: 10px;
+}
+
+.dashboardLeftUserDeleteAccount {
+  background-color: red;
+}
+
+.dashboardLeftUserProfileAction button:hover {
+  color: #fff;
+  border-radius: 20px;
+  transition: 0.4s;
+}
+
+.dashboardLeftUserEditProfile {
+  background-color: #00ff00;
+}
+
+.dashboardLeftUserEditProfile:hover {
+  background-color: #009900;
+  border-radius: 20px;
+  transition: 0.3s;
+}
+
+.dashboardRightTabs{
+  width: fit-content;
+  padding: 0 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #fff;
+  border-radius: 15px;
+  margin: 20px auto;
+}
+
+.dashboardRightTabs button{
+  padding: 10px 20px;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  color: #000;
+  font-size: 16px;
+  font-weight: bold;
+  transition: 0.3s;
+  border-radius: 10px;
+  margin: 10px;
+}
+
+.dashboardRightTabs button:hover{
+  background-color: #000;
+  color: #fff;
+  transition: 0.4s;
+}
+
+.dashboardRightTabs button.active{
+  background-color: #000;
+  color: #fff;
+  transition: 0.4s;
+}

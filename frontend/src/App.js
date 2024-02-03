@@ -7,8 +7,7 @@ import Footer from "./components/footer";
 import About from "./pages/about";
 import Blog from "./pages/blog";
 import AddItem from "./pages/listItem";
-import UserProfile from "./pages/dashboard";
-import CompleteProfile from "./components/Auth/CompleteProfile";
+import Dashboard from "./pages/dashboard";
 import NotFound from "./pages/notfound";
 import Bot from "./pages/bot";
 import ItemDetailsForm from "./pages/itemdisplay";
@@ -26,9 +25,9 @@ function App() {
                         <Route exact path="/login" element={<Auth />} />
                         <Route exact path="/item" element={<AddItem />} />
                         <Route exact path="/bot" element={<Bot />} />
-                        <Route path="/*" element={<NotFound />} />
-                        <Route path="/profile" element={<UserProfile />} />
+                        <Route path="/profile/:userId" element={<Dashboard />} />
                         <Route path="/displayitem" element={<ItemDetailsForm />} />
+                        <Route path="/*" element={<NotFound />} />
                     </Route>
                 </Routes>
                 <Footer />

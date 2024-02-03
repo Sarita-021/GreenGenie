@@ -1,0 +1,68 @@
+.editProfile{
+    height: 80%;
+    width: 90%;
+    margin-top: 10px;
+    margin-bottom: 50px;
+    margin-left: 50px;
+    margin-right: 50px;
+    padding: 20px;
+    border-radius: 10px;
+}
+
+.editProfile h1{
+    text-align: center;
+}
+
+.editProfile > div{
+    margin-top: 20px;
+    height: 400px;
+    width: 70%;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+}
+
+.editProfile > div > div{
+    width: 100%;
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.editProfile > div > div > span{
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.editProfile > div > div > input{
+    width: 50%;
+    height: 30px;
+    border: 1px solid #e0e0e0;
+    border-radius: 5px;
+    padding: 5px;
+    font-size: 18px;
+}
+
+.editProfile > div > button{
+    width: 30%;
+    height: 40px;
+    border: none;
+    border-radius: 5px;
+    background-color: #fff;
+    color: #000;
+    font-size: 20px;
+    cursor: pointer;
+    transition: 0.4s;
+}
+
+.editProfile > div > button:hover{
+    border-radius: 20px;
+    transition: 0.5s;
+}
+
+.error-message{
+    color: red;
+    font-size: 20px;
+    text-align: center;
+}

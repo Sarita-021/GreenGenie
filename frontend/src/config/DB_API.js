@@ -17,14 +17,12 @@ export const createUser = async (
         address: address?.address,
     };
     delete reqData.address.phone;
-    console.log(reqData);
-
+    
     const response = await axios.post(
         `${process.env.REACT_APP_SERVER_URI}/user/new`,
         reqData
     );
-    console.log(response);
-    setCookies("accessToken", response.data)
+    setCookies("accessToken", response.data?.data)
     return true;
 };
 

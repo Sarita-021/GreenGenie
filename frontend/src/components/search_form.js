@@ -4,7 +4,7 @@ import "../css/search_form.css";
 const Search_form = () => {
     return (
         <form className="search-form">
-            <div class="form-row">
+            <div className="form-row">
                 <div className="field">
                     <input type="text" id="location" placeholder="Enter Your City" />
                 </div>

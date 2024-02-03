@@ -60,18 +60,20 @@ module.exports.profile = async (req, res) => {
     try {
         const username = req.params.username;
         const user = await UserModel.findOne({ username: username })
+        if (!user) {
+            return res.status(404).json({ message: 'User not found' });
+        }
+
         if (user) {
             user.fullname = req.body.fullname || user.fullname;
+            user.username = req.body.username || user.username;
             user.email = req.body.email || user.email;
             user.phone = req.body.phone || user.phone;
-            user.profilePicture = req.body.profilePicture || user.name;
+            user.profilePicture = req.body.profilePicture || user.profilePicture;
             user.address = req.body.address || user.address;
         }
 
         const updatedUser = await user.save();
-        if (!user) {
-            return res.status(404).json({ message: 'User not found' });
-        }
 
         res.status(201).json({
             success: true,
@@ -80,7 +82,7 @@ module.exports.profile = async (req, res) => {
         });
     } catch (err) {
         console.error(err);
-        res.status(500).json({ message: 'Server error' });
+        res.status(500).json({ message: 'Internal Server Error' });
     }
 };
 
@@ -129,10 +131,27 @@ module.exports.getallUserName = async (req, res) => {
 module.exports.getUserByFId = async (req, res) => {
     const firebaseUserId = req.params.firebaseUserId;
     try {
-        console.log("ksdkjf")
         const user = await UserModel.findOne({ firebaseUserId: firebaseUserId });
-        res.status(200).send({ status: true, data: user });
+        if (user) {
+            res.status(200).send({ status: true, data: user });
+            return;
+        }
+        res.status(404).send({ status: false });
     } catch (err) {
-        res.status(400).send({ error: "not found" });
+        res.status(500).send({ error: "Internal Server Error" });
     }
 };
+
+module.exports.deleteUser = async (req, res) => {
+    const firebaseUserId = req.params.firebaseUserId;
+    try {
+        const user = await UserModel.findOneAndDelete({ firebaseUserId: firebaseUserId });
+        if (user) {
+            res.status(200).send({ status: true});
+            return;
+        }
+        res.status(404).send({ status: false });
+    } catch (err) {
+        res.status(500).send({ error: "Internal Server Error" });
+    }
+}
