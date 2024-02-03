@@ -12,7 +12,7 @@ const {
 router.route("/new").post(newUser);
 router.route("/username/:username").get(getallUserName);
 router.route("/:email").get(allemail);
-router.route("/:username").post(profile);
+router.route("/:username").put(profile);
 router.route("/id/:firebaseUserId").get(getUserByFId);
 router.route("/id/:firebaseUserId").delete(deleteUser);
 
