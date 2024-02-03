@@ -2,7 +2,7 @@ import { useState } from 'react';
 import '@chatscope/chat-ui-kit-styles/dist/default/styles.min.css';
 import { MainContainer, ChatContainer, MessageList, Message, MessageInput, TypingIndicator } from '@chatscope/chat-ui-kit-react';
 
-const API_KEY = "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";
+const API_KEY =  process.env.REACT_APP_OpenAi_apiKey;
 
 
 const systemMessage = {
