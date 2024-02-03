@@ -60,18 +60,19 @@ module.exports.profile = async (req, res) => {
     try {
         const username = req.params.username;
         const user = await UserModel.findOne({ username: username })
+        if (!user) {
+            return res.status(404).json({ message: 'User not found' });
+        }
+
         if (user) {
             user.fullname = req.body.fullname || user.fullname;
             user.email = req.body.email || user.email;
             user.phone = req.body.phone || user.phone;
-            user.profilePicture = req.body.profilePicture || user.name;
+            user.profilePicture = req.body.profilePicture || user.profilePicture;
             user.address = req.body.address || user.address;
         }
 
         const updatedUser = await user.save();
-        if (!user) {
-            return res.status(404).json({ message: 'User not found' });
-        }
 
         res.status(201).json({
             success: true,
@@ -80,7 +81,7 @@ module.exports.profile = async (req, res) => {
         });
     } catch (err) {
         console.error(err);
-        res.status(500).json({ message: 'Server error' });
+        res.status(500).json({ message: 'Internal Server Error' });
     }
 };
 
