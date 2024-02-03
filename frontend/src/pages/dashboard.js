@@ -62,7 +62,7 @@ export default function Dashboard() {
       <div className="dashboardLeft">
         <div className="dashboardLeftUserDetails">
           <div className="dashboardLeftUserDetailsImage">
-            <img src={user?.profilePicture} alt="" />
+            <img src={user?.profilePicture !== "" ? user?.profilePicture : "/assets/defaultProfile.png"} alt="" />
           </div>
           <div className="dashboardLeftUserDetailsFullname">
             Fullname: <span>{user?.fullname}</span>
