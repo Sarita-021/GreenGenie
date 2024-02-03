@@ -2,6 +2,10 @@ const mongoose = require('mongoose');
 
 
 const itemSchema = new mongoose.Schema({
+    username: {
+        type: String,
+        required: true
+    },
     itemFashion: {
         type: String,
         required: true,
@@ -64,11 +68,6 @@ const itemSchema = new mongoose.Schema({
     itemDescription: {
         type: String,
     },
-    // Fields for user association, timestamps, etc.
-    // userId: {
-    //     type: mongoose.Schema.Types.ObjectId,
-    //     ref: 'User', // Assuming a User model exists
-    // },
     createdAt: {
         type: Date,
         default: Date.now,

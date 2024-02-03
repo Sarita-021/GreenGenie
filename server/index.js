@@ -25,17 +25,17 @@ app.use("/api/v1/item", itemRoutes);
 app.use("/api/v1/blog", blogRoutes);
 
 app.get("/", (req, res) => {
-  res.send("Hello from server!");
+    res.send("Hello from server!");
 });
 
 app.get("*", (req, res) => {
-  res.send("invalid request");
+    res.send("invalid request");
 });
 
 const PORT = process.env.PORT || 8080;
 
 app.listen(PORT, () => {
-  console.log(
-    "server Running on " + process.env.DEV_MODE + " mode port no. " + PORT
-  );
+    console.log(
+        "server Running on " + process.env.DEV_MODE + " mode port no. " + PORT
+    );
 });

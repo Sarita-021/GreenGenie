@@ -1,46 +1,7 @@
-import React, { useState, useEffect } from "react";
-import "../css/listItem.css";
-import { useNavigate } from "react-router-dom";
-import axios from "axios";
+import React from "react";
 
-const AddItem = () => {
-
-    const handleSubmit = async (e) => {
-        e.preventDefault();
-        try {
-            const formData = new FormData();
-            formData.append("Username", JSON.parse(localStorage.getItem("user")).username);
-            formData.append("itemFashion", inputs.itemFashion);
-            formData.append("itemSize", inputs.itemSize);
-            formData.append("itemCategory", inputs.itemCategory);
-            formData.append("itemGender", inputs.itemGender);
-            formData.append("itemBrand", inputs.itemBrand);
-            formData.append("itemFabric", inputs.itemFabric);
-            formData.append("itemPriceRange", inputs.itemPriceRange);
-            formData.append("itemQuality", inputs.itemQuality);
-            formData.append("itemMotive", inputs.itemMotive);
-            formData.append("itemDesciption", inputs.itemDescription);
-            formData.append("itemImages", file);
-            const { data } = await axios.post('${process.env.REACT_APP_SERVER_URI}/item/addItem', formData, { headers: { 'Content-Type': 'multipart/form-data' } }
-                // 
-            );
-            if (data.success) {
-                alert("item added successfully");
-                navigate("/");
-            }
-        } catch (error) {
-            console.log(error);
-            alert(error.response.data.message);
-            console.log(error.response.data.message);
-        }
-    }
-    useEffect(() => {
-        const data = localStorage.getItem("user");
-        console.log(" i am here")
-    }, []);
-    const navigate = useNavigate();
-
-    const [inputs, setInputs] = useState({
+const updateItem = () => {
+    const [itemDetails, setItemDetails] = useState({
         itemFashion: '',
         itemSize: '',
         itemCategory: '',
@@ -50,23 +11,31 @@ const AddItem = () => {
         itemPriceRange: '',
         itemQuality: '',
         itemMotive: '',
-        itemDescription: ''
-    })
-    const handleChange = (e) => {
-        setInputs((prevState) => ({
-            ...prevState,
-            [e.target.name]: e.target.value
-        }))
-    }
+        itemImage: '',
+        itemDescription: '',
+    });
 
-    const [file, setFile] = useState()
-    const handlePhoto = (e) => {
-        setFile(e.target.files[0])
-    }
+    useEffect(() => {
+        const fetchItemDetails = async () => {
+            var userData = JSON.parse(localStorage.getItem("user")).data.username
+            const response = await axios.get(`${process.env.REACT_APP_SERVER_URI}/item/${userData}`); // Replace with your backend endpoint
+            console.log(response);
+        };
 
+        fetchItemDetails();
+    }, []);
+
+    const handleChange = (event) => {
+        const { name, value } = event.target;
+        setItemDetails({ ...itemDetails, [name]: value });
+    };
+
+    const handleSubmit = async (event) => {
+        event.preventDefault();
+    };
 
     return (
-        <div className="listitem">
+        <>
             <form onSubmit={handleSubmit}>
                 <label className="label" htmlFor="itemFashion">Fashion Style:</label>
                 <select className="input" onChange={handleChange} value={inputs.itemFashion} id="itemFashion" name="itemFashion" required>
@@ -128,8 +97,9 @@ const AddItem = () => {
                 <button type="submit" value="submit">Add Item</button>
             </form>
 
-        </div>
-    )
-}
+        </>
 
-export default AddItem;
+    )
+};
+
+export default updateItem;

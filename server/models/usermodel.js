@@ -1,36 +1,36 @@
 const mongoose = require("mongoose");
 
 const UserSchema = new mongoose.Schema(
-  {
-    firebaseUserId: {
-      type: String,
+    {
+        firebaseUserId: {
+            type: String,
+        },
+        username: {
+            type: String,
+            unique: true,
+        },
+        fullname: {
+            type: String,
+        },
+        email: {
+            type: String,
+            unique: true,
+        },
+        phone: {
+            type: String,
+        },
+        profilePicture: {
+            type: String,
+        },
+        address: {
+            type: String,
+        },
     },
-    username: {
-      type: String,
-      unique: true,
-    },
-    fullname: {
-      type: String,
-    },
-    email: {
-      type: String,
-      unique: true,
-    },
-    phone: {
-      type: String,
-    },
-    profilePicture: {
-      type: String,
-    },
-    address: {
-      type: Object,
-    },
-  },
-  {
-    timestamps: true,
-  }
+    {
+        timestamps: true,
+    }
 );
 
 const UserModel = mongoose.model("users", UserSchema);
 
-module.exports = { UserModel};
+module.exports = { UserModel };
