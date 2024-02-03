@@ -7,6 +7,7 @@ export default function EditProfile({ userData }) {
   const [email, setEmail] = useState(userData?.email);
   const [phone, setPhone] = useState(userData?.phone);
   const [address, setAddress] = useState(userData?.address);
+  const [username, setUsername] = useState(userData?.username);
 
   const [error, setError] = useState("");
 
@@ -18,6 +19,7 @@ export default function EditProfile({ userData }) {
         `${process.env.REACT_APP_SERVER_URI}/user/${userData?.username}`,
         {
           fullname,
+          username,
           email,
           phone,
           address,
@@ -26,7 +28,6 @@ export default function EditProfile({ userData }) {
       if(res.status === 201){
         window.location.reload();
       }
-      // res.data && window.location.reload();
     } catch (err) {
       setError("Error occurred !!");
     }
@@ -43,6 +44,16 @@ export default function EditProfile({ userData }) {
             value={fullname}
             onChange={(e) => {
               setFullname(e.target.value);
+            }}
+          />
+        </div>
+        <div>
+          <span>Username</span>
+          <input
+            type="text"
+            value={username}
+            onChange={(e) => {
+              setUsername(e.target.value);
             }}
           />
         </div>

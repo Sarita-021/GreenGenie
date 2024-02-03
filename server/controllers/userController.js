@@ -66,6 +66,7 @@ module.exports.profile = async (req, res) => {
 
         if (user) {
             user.fullname = req.body.fullname || user.fullname;
+            user.username = req.body.username || user.username;
             user.email = req.body.email || user.email;
             user.phone = req.body.phone || user.phone;
             user.profilePicture = req.body.profilePicture || user.profilePicture;
