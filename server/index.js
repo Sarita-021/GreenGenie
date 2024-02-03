@@ -29,7 +29,7 @@ app.get("/", (req, res) => {
 });
 
 app.get("*", (req, res) => {
-    res.send("invalid request");
+    res.send("invalid route!!");
 });
 
 const PORT = process.env.PORT || 8080;

@@ -129,10 +129,13 @@ module.exports.getallUserName = async (req, res) => {
 module.exports.getUserByFId = async (req, res) => {
     const firebaseUserId = req.params.firebaseUserId;
     try {
-        console.log("ksdkjf")
         const user = await UserModel.findOne({ firebaseUserId: firebaseUserId });
-        res.status(200).send({ status: true, data: user });
+        if (user) {
+            res.status(200).send({ status: true, data: user });
+            return;
+        }
+        res.status(404).send({ status: false });
     } catch (err) {
-        res.status(400).send({ error: "not found" });
+        res.status(500).send({ error: "Internal Server Error" });
     }
 };
