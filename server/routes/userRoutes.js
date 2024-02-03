@@ -4,7 +4,8 @@ const {
     allemail,
     getUserByFId,
     getallUserName,
-    profile
+    profile,
+    deleteUser
 } = require("../controllers/userController");
 
 // user routes
@@ -13,5 +14,6 @@ router.route("/username/:username").get(getallUserName);
 router.route("/:email").get(allemail);
 router.route("/:username").post(profile);
 router.route("/id/:firebaseUserId").get(getUserByFId);
+router.route("/id/:firebaseUserId").delete(deleteUser);
 
 module.exports = router;

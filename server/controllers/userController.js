@@ -139,3 +139,17 @@ module.exports.getUserByFId = async (req, res) => {
         res.status(500).send({ error: "Internal Server Error" });
     }
 };
+
+module.exports.deleteUser = async (req, res) => {
+    const firebaseUserId = req.params.firebaseUserId;
+    try {
+        const user = await UserModel.findOneAndDelete({ firebaseUserId: firebaseUserId });
+        if (user) {
+            res.status(200).send({ status: true});
+            return;
+        }
+        res.status(404).send({ status: false });
+    } catch (err) {
+        res.status(500).send({ error: "Internal Server Error" });
+    }
+}
