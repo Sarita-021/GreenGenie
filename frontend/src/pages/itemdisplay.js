@@ -19,7 +19,7 @@ function ItemDetailsForm() {
 
     useEffect(() => {
         const fetchItemDetails = async () => {
-            var userData = JSON.parse(localStorage.getItem("user")).data.username
+            var userData = JSON.parse(localStorage.getItem("user")).username
             const response = await axios.get(`${process.env.REACT_APP_SERVER_URI}/item/${userData}`); // Replace with your backend endpoint
             console.log(response);
         };
