@@ -4,6 +4,10 @@ import "../css/dashboard.css";
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import EditProfile from "../components/EditProfile";
+import { FaPhoneVolume } from "react-icons/fa6";
+import { MdEmail } from "react-icons/md";
+import { MdOutlineCurrencyRupee } from "react-icons/md";
+import { IoWarningOutline } from "react-icons/io5";
 
 export default function Dashboard() {
   const { userId } = useParams();
@@ -61,37 +65,64 @@ export default function Dashboard() {
     <div className="dashboard">
       <div className="dashboardLeft">
         <div className="dashboardLeftUserDetails">
-          <div className="dashboardLeftUserDetailsImage">
-            <img src={user?.profilePicture !== "" ? user?.profilePicture : "/assets/defaultProfile.png"} alt="" />
+          <div className="dashboardLeftUserData">
+            <div className="dashboardLeftUserDetailsImage">
+              <img
+                src={
+                  user?.profilePicture !== ""
+                    ? user?.profilePicture
+                    : "/assets/defaultProfile.png"
+                }
+                alt=""
+              />
+            </div>
+            <div className="userNames">
+              <span className="fullname">{user?.fullname}</span>
+              <span className="username">@{user?.username}</span>
+              <div className="dashboardLeftUserProfileAction">
+                <button
+                  className="dashboardLeftUserEditProfile"
+                  onClick={() => setTab("profile")}
+                >
+                  Edit
+                </button>
+              </div>
+            </div>
           </div>
-          <div className="dashboardLeftUserDetailsFullname">
-            Fullname: <span>{user?.fullname}</span>
+          <div className="dashboardLeftOtherDetails">
+            <div className="dashboardLeftOtherDetailsItem">
+              <FaPhoneVolume />
+              <span>{user?.phone}</span>
+            </div>
+            <div className="dashboardLeftOtherDetailsItem">
+              <MdEmail />
+              <span>{user?.email}</span>
+            </div>
           </div>
-          <div className="dashboardLeftUserDetailsUsername">
-            Username: <span>{user?.username}</span>
+          <div className="dashboardLeftUserOrderDetails">
+            <div className="dashboardLeftUserOrderDetailsItem">
+              <span className="orderNumber">
+                <MdOutlineCurrencyRupee /> 8374
+              </span>
+              <span className="orderText">Revenue</span>
+            </div>
+            <div className="dashboardLeftUserOrderDetailsItem">
+              <span className="orderNumber">83</span>
+              <span className="orderText">Orders</span>
+            </div>
           </div>
-          <div className="dashboardLeftUserDetailsEmail">
-            Email: <span>{user?.email}</span>
+          <div
+            className="dashboardLogoutBtn"
+            onClick={() => {
+              localStorage.clear();
+              window.location.href = "/";
+            }}
+          >
+            Logout
           </div>
-          <div className="dashboardLeftUserDetailsPhone">
-            Phone: <span>{user?.phone}</span>
-          </div>
-          <div className="dashboardLeftUserDetailsAddress">
-            Address: <span>{user?.address}</span>
-          </div>
-          <div className="dashboardLeftUserProfileAction">
-            <button
-              className="dashboardLeftUserEditProfile"
-              onClick={() => setTab("profile")}
-            >
-              Edit Profile
-            </button>
-            <button
-              className="dashboardLeftUserDeleteAccount"
-              onClick={() => deleteAccount()}
-            >
-              Delete Account
-            </button>
+          <div className="dashboardUserAccountDelete">
+            <IoWarningOutline />
+            Delete Account
           </div>
         </div>
       </div>
