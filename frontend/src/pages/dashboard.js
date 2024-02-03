@@ -96,21 +96,23 @@ export default function Dashboard() {
         </div>
       </div>
       <div className="dashboardRight">
-        <div className="dashboardRightTabs">
-          <button
-            className={tab === "useritems" ? "active" : ""}
-            onClick={() => setTab("useritems")}
-          >
-            User Items
-          </button>
-          <button
-            className={tab === "purchases" ? "active" : ""}
-            onClick={() => setTab("purchases")}
-          >
-            Purchases
-          </button>
-        </div>
-        {tab === "profile" && <EditProfile />}
+        {tab !== "profile" && (
+          <div className="dashboardRightTabs">
+            <button
+              className={tab === "useritems" ? "active" : ""}
+              onClick={() => setTab("useritems")}
+            >
+              User Items
+            </button>
+            <button
+              className={tab === "purchases" ? "active" : ""}
+              onClick={() => setTab("purchases")}
+            >
+              Purchases
+            </button>
+          </div>
+        )}
+        {tab === "profile" && <EditProfile userData={user} />}
         {tab === "useritems" && <>User Items</>}
         {tab === "purchases" && <>Purchases</>}
       </div>

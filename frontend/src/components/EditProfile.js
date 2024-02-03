@@ -1,11 +1,84 @@
 import axios from "axios";
-import { useState } from "react";
+import { useRef, useState } from "react";
 import "../css/editProfile.css";
 
-export default function EditProfile() {
+export default function EditProfile({ userData }) {
+  const [fullname, setFullname] = useState(userData?.fullname);
+  const [email, setEmail] = useState(userData?.email);
+  const [phone, setPhone] = useState(userData?.phone);
+  const [address, setAddress] = useState(userData?.address);
+
+  const [error, setError] = useState("");
+
+  const handleUpdate = async (e) => {
+    e.preventDefault();
+    setError("");
+    try {
+      const res = await axios.put(
+        `${process.env.REACT_APP_SERVER_URI}/user/${userData?.username}`,
+        {
+          fullname,
+          email,
+          phone,
+          address,
+        }
+      );
+      if(res.status === 201){
+        window.location.reload();
+      }
+      // res.data && window.location.reload();
+    } catch (err) {
+      setError("Error occurred !!");
+    }
+  };
+
   return (
     <div className="editProfile">
       <h1>Edit Profile</h1>
+      <div>
+        <div>
+          <span>Fullname</span>
+          <input
+            type="text"
+            value={fullname}
+            onChange={(e) => {
+              setFullname(e.target.value);
+            }}
+          />
+        </div>
+        <div>
+          <span>Email</span>
+          <input
+            type="email"
+            value={email}
+            onChange={(e) => {
+              setEmail(e.target.value);
+            }}
+          />
+        </div>
+        <div>
+          <span>Phone</span>
+          <input
+            type="number"
+            value={phone}
+            onChange={(e) => {
+              setPhone(e.target.value);
+            }}
+          />
+        </div>
+        <div>
+          <span>Address</span>
+          <input
+            type="text"
+            value={address}
+            onChange={(e) => {
+              setAddress(e.target.value);
+            }}
+          />
+        </div>
+        {error && <span className="error-message">{error}</span>}
+        <button onClick={handleUpdate}>Save</button>
+      </div>
     </div>
   );
 }
