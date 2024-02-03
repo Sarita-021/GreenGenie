@@ -125,11 +125,14 @@
 }
 
 .dashboardRightTabs{
-  width: 100%;
+  width: fit-content;
+  padding: 0 20px;
   display: flex;
   align-items: center;
   justify-content: center;
-  margin-top: 20px;
+  background-color: #fff;
+  border-radius: 15px;
+  margin: 20px auto;
 }
 
 .dashboardRightTabs button{

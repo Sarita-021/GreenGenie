@@ -103,9 +103,16 @@ export default function Dashboard() {
           >
             User Items
           </button>
+          <button
+            className={tab === "purchases" ? "active" : ""}
+            onClick={() => setTab("purchases")}
+          >
+            Purchases
+          </button>
         </div>
         {tab === "profile" && <EditProfile />}
         {tab === "useritems" && <>User Items</>}
+        {tab === "purchases" && <>Purchases</>}
       </div>
     </div>
   );
