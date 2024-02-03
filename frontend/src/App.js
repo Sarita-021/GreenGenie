@@ -28,7 +28,7 @@ function App() {
                         <Route exact path="/bot" element={<Bot />} />
                         <Route path="/*" element={<NotFound />} />
                         <Route path="/profile" element={<UserProfile />} />
-                        <Route path="/additem" element={<ItemDetailsForm />} />
+                        <Route path="/displayitem" element={<ItemDetailsForm />} />
                     </Route>
                 </Routes>
                 <Footer />

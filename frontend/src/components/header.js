@@ -54,7 +54,7 @@ const Header = () => {
                                 </li>
                             ))}
                             <li>
-                                <NavLink to={`/item/${JSON.parse(localStorage.getItem("user")).data.username}`}> Item Display</NavLink>
+                                <NavLink to="/displayitem"> Item Display</NavLink>
                                 <NavLink to="/item" >Item </NavLink>
                             </li>
                         </ul>
@@ -82,6 +82,7 @@ const Header = () => {
                                     <NavLink to={item.path}>{item.name}</NavLink>
                                 </li>
                             ))}
+                            <NavLink to="/displayitem">Item Display</NavLink>
                         </ul>
                         <div>
                             <span>
