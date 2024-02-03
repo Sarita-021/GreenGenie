@@ -6,6 +6,7 @@ import { useNavigate } from "react-router-dom";
 
 export default function CompleteProfile({ userData }) {
     const address = useRef({});
+    const [gender, setGender] = useState("M");
     const [userExists, setUserExists] = useState(true);
     const [isLoading, setIsLoading] = useState(true);
 
@@ -16,6 +17,7 @@ export default function CompleteProfile({ userData }) {
             userData?.fullname,
             userData?.email,
             userData?.photoURL,
+            gender,
             address.current
         );
         if (resp) {
@@ -54,6 +56,21 @@ export default function CompleteProfile({ userData }) {
             <div className="completeProfile">
                 <h1>Complete Profile</h1>
                 <section>
+                    <div>
+                        <label htmlFor="gender">Gender</label>
+                        <div className="genderOptions">
+                            <label htmlFor="male">Male</label>
+                            <input type="radio" name="gender" onChange={(e)=>{setGender('M')}} />
+                        </div>
+                        <div className="genderOptions">
+                            <label htmlFor="female">Female</label>
+                            <input type="radio" name="gender" onChange={(e)=>{setGender('F')}} />
+                        </div>
+                        <div className="genderOptions">
+                            <label htmlFor="others">Others</label>
+                            <input type="radio" name="gender" onChange={(e)=>{setGender('O')}} />
+                        </div>
+                    </div>
                     <div>
                         <label htmlFor="phone">Phone Number</label>
                         <input

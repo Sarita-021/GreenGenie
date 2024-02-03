@@ -32,7 +32,7 @@ const Header = () => {
     let isLogin = localStorage.getItem('islogin');
     const logout = () => {
         localStorage.clear();
-        navigate("/")
+        window.location.href='/';
     }
 
     useEffect(() => {
