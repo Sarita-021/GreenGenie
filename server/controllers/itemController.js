@@ -12,30 +12,32 @@ const { UserModel } = require("../models/usermodel");
 // Create a new item
 exports.newItemController = async (req, res, next) => {
     try {
+        console.log("skdjfkls")
         const username = req.body.Username;
         const User = await UserModel.findOne({ username: username });
-        const itemFashion = req.body.itemFashion;
-        const itemSize = req.body.itemSize;
-        const itemCategory = req.body.itemCategory;
-        const itemGender = req.body.itemGender;
-        const itemBrand = req.body.itemBrand;
-        const itemFabric = req.body.itemFabric;
-        const itemPriceRange = req.body.itemPriceRange;
-        const itemQuality = req.body.itemQuality;
-        const itemMotive = req.body.itemMotive;
-        const itemDescription = req.body.itemdescription;
-        const itemImages = {
-            details: {
-                filename: req.file.filename,
-                originalname: req.file.originalname,
-                path: req.file.path
-            },
-            contentType: 'image/png'
-        }
-        console.log(req.body, req.file);
+        console.log(User)
+        const Sold_by = req.body.fullname;
+        const Product_Name = req.body.Product_Name;
+        const Item_Size = req.body.Item_Size;
+        const Item_Category = req.body.Item_Category;
+        const Brand_name = req.body.Brand_name;
+        const Fabric = req.body.Fabric;
+        const Item_Price = req.body.Item_Price;
+        const Item_Quality = req.body.Item_Quality;
+        const Item_Motive = req.body.Item_Motive;
+        const Other_Details = req.body.itemdescription;
+        const itemImages = [];
+        const itemImage = req.body.itemImages;
+        // console.log(itemImage)
+        // // filename: ,
+        // console.log(req.body, req.body.itemImages);
+        // for (var i = 0; i < req.files.length; i++) {
+        //     itemImages.push(req.files[i].filename)
+        // }
+        // console.log(itemImages)
         // validation 
 
-        const newItem = new itemModel({ username, itemFashion, itemSize, itemCategory, itemGender, itemBrand, itemFabric, itemPriceRange, itemQuality, itemMotive, itemDescription, itemImages });
+        const newItem = new itemModel({ username, Sold_by, Product_Name, Item_Size, Item_Category, Brand_name, Fabric, Item_Price, Item_Quality, Item_Motive, Other_Details, itemImage });
         console.log(newItem);
         const savedItem = await newItem.save();
         return res.status(201).send({
@@ -105,15 +107,15 @@ exports.updateItemController = async (req, res) => {
         const id = req.body._id;
         const Item = await itemModel.findOne({ _id: id });
         if (!Item) {
-            Item.itemFashion = req.body.itemFashion || Item.itemFashion;
-            Item.itemSize = req.body.itemSize || Item.itemSize;
+            Item.Product_Name = req.body.Product_Name || Item.Product_Name;
+            Item.Item_Size = req.body.Item_Size || Item.Item_Size;
             Item.itemCategory = req.body.itemCategory || Item.itemCategory;
-            Item.itemGender = req.body.itemGender || Item.itemGender;
-            Item.itemBrand = req.body.itemBrand || Item.itemBrand;
-            Item.itemFabric = req.body.itemFabric || Item.itemFabric;
-            Item.itemPriceRange = req.body.itemPriceRange || Item.itemPriceRange;
-            Item.itemQuality = req.body.itemQuality || Item.itemQuality;
-            Item.itemMotive = req.body.itemMotive || Item.itemMotive;
+            Item.Item_Category = req.body.Item_Category || Item.Item_Category;
+            Item.Brand_name = req.body.Brand_name || Item.Brand_name;
+            Item.Fabric = req.body.Fabric || Item.Fabric;
+            Item.Item_Price = req.body.Item_Price || Item.Item_Price;
+            Item.Item_Quality = req.body.Item_Quality || Item.Item_Quality;
+            Item.Item_Motive = req.body.Item_Motive || Item.Item_Motive;
             Item.itemdescription = req.body.itemdescription || Item.itemdescription;
         }
         const updatedItem = await user.save();

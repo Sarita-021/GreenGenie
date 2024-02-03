@@ -1,20 +1,20 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
-import "../css/itemdisplay.css"
+import "../css/itemdisplay.css";
 
 function ItemDetailsForm() {
     const [itemDetails, setItemDetails] = useState({
-        itemFashion: '',
-        itemSize: '',
+        Product_Name: '',
+        Item_Size: '',
         itemCategory: '',
-        itemGender: '',
-        itemBrand: '',
-        itemFabric: '',
-        itemPriceRange: '',
-        itemQuality: '',
-        itemMotive: '',
+        Item_Category: '',
+        Brand_name: '',
+        Fabric: '',
+        Item_Price: '',
+        Item_Quality: '',
+        Item_Motive: '',
         itemImage: '',
-        itemDescription: '',
+        Other_Details: '',
     });
 
     useEffect(() => {

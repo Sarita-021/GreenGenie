@@ -6,66 +6,55 @@ const itemSchema = new mongoose.Schema({
         type: String,
         required: true
     },
-    itemFashion: {
+    Sold_by: {
         type: String,
-        required: true,
-        enum: ['casual', 'ethical wear', 'jeans', 'shirt', 'suit', 'saree', 'pants',],
+        required: true
     },
-    itemSize: {
+    Purchased_by: {
         type: String,
-        required: true,
     },
-    itemCategory: {
+    Product_Name: {
         type: String,
         required: true,
     },
-    itemGender: {
-        type: String,
-        required: true,
-        enum: ['kids', 'men', 'women'],
-    },
-    itemBrand: {
+    Item_Size: {
         type: String,
         required: true,
     },
-    itemFabric: {
+    Item_Category: {
+        type: String,
+        required: true,
+        enum: ["Kid's", "Men's", "Women's"],
+    },
+    Brand_name: {
+        type: String,
+    },
+    Fabric: {
         type: String,
         required: true,
     },
-    itemPriceRange: {
+    Item_Price: {
         type: String,
         required: true,
     },
-    itemQuality: {
+    Item_Quality: {
         type: String,
         required: true,
-        enum: ['brand new', 'old', 'good'],
+        enum: ['Brand New', 'Old', 'Good'],
     },
-    itemMotive: {
+    Item_Motive: {
         type: String,
         required: true,
-        enum: ['donate', 'sell', 'recycle'],
+        enum: ['Donate', 'Sell', 'Recycle'],
     },
     // Additional fields for images, descriptions, etc.
     itemImages:
     {
         type: Array,
-        details:
-        {
-            filename: {
-                type: String
-            },
-            originalname: {
-                type: String
-            },
-            path: {
-                type: String
-            }
-        },
-        contentType: String
+        required: true
     },
 
-    itemDescription: {
+    Other_Details: {
         type: String,
     },
     createdAt: {
