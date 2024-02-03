@@ -33,7 +33,7 @@ export default function CompleteProfile({ userData }) {
             console.log("user not found");
             setUserExists(false);
         } else {
-            setCookies("accessToken", user.data);
+            setCookies("accessToken", user.data?.data);
             navigate("/");
             localStorage.setItem("islogin", true);
         }

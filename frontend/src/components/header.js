@@ -34,7 +34,6 @@ const Header = () => {
         localStorage.clear();
         navigate("/")
     }
-    console.log(isLogin)
 
     useEffect(() => {
         const data = localStorage.getItem("user");
@@ -54,7 +53,7 @@ const Header = () => {
                                 </li>
                             ))}
                             <li>
-                                <NavLink to={`/item/${JSON.parse(localStorage.getItem("user")).data.username}`}> Item Display</NavLink>
+                                <NavLink to={`/item/${JSON.parse(localStorage.getItem("user"))?.username}`}> Item Display</NavLink>
                                 <NavLink to="/item" >Item </NavLink>
                             </li>
                         </ul>
@@ -65,8 +64,8 @@ const Header = () => {
                         <NavLink to="/profile" >
                             <div className="navProfile">
                                 <img
-                                    src={`${JSON.parse(localStorage.getItem("user")).data.profilePicture
-                                        ? JSON.parse(localStorage.getItem("user")).data.profilePicture
+                                    src={`${JSON.parse(localStorage.getItem("user"))?.profilePicture
+                                        ? JSON.parse(localStorage.getItem("user"))?.profilePicture
                                         : "/assets/defaultProfile.png"
                                         }`}
                                     alt=""
