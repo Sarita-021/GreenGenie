@@ -5,6 +5,7 @@ export const createUser = async (
     displayName,
     email,
     photoUrl,
+    gender,
     address
 ) => {
     const reqData = {
@@ -13,10 +14,11 @@ export const createUser = async (
         username: email?.split("@")[0],
         email: email,
         profilePicture: photoUrl,
+        gender: gender,
         phone: address?.phone,
         address: address?.address,
     };
-    delete reqData.address.phone;
+    delete reqData?.address?.phone;
     
     const response = await axios.post(
         `${process.env.REACT_APP_SERVER_URI}/user/new`,

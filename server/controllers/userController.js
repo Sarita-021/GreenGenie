@@ -4,7 +4,7 @@ const { UserModel } = require("../models/usermodel");
 
 module.exports.newUser = async (req, res) => {
     try {
-        const { fullname, email, username, phone, profilePicture, address } =
+        const { fullname, email, username, phone, profilePicture, gender, address } =
             req.body;
 
         // Validate that required fields are present
@@ -13,6 +13,7 @@ module.exports.newUser = async (req, res) => {
             !email ||
             !username ||
             !phone ||
+            !gender ||
             !profilePicture ||
             !address
         ) {
@@ -37,6 +38,7 @@ module.exports.newUser = async (req, res) => {
                     email,
                     username,
                     phone,
+                    gender,
                     profilePicture,
                     address
                 },
