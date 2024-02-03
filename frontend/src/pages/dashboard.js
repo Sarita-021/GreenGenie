@@ -10,6 +10,7 @@ export default function Dashboard() {
   const [user, setUser] = useState(null);
   const [error, setError] = useState(null);
   const [loading, setLoading] = useState(true);
+  const [tab, setTab] = useState("useritems");
 
   const fetchUser = async () => {
     try {
@@ -21,6 +22,18 @@ export default function Dashboard() {
       setError("Error !! Try Again...");
     } finally {
       setLoading(false);
+    }
+  };
+
+  const deleteAccount = async () => {
+    try {
+      const res = await axios.delete(
+        `${process.env.REACT_APP_SERVER_URI}/user/id/${userId}`
+      );
+      localStorage.removeItem("user");
+      window.location.href = "/";
+    } catch (error) {
+      console.log(error);
     }
   };
 
@@ -67,17 +80,32 @@ export default function Dashboard() {
             Address: <span>{user?.address}</span>
           </div>
           <div className="dashboardLeftUserProfileAction">
-            <button className="dashboardLeftUserEditProfile">
+            <button
+              className="dashboardLeftUserEditProfile"
+              onClick={() => setTab("profile")}
+            >
               Edit Profile
             </button>
-            <button className="dashboardLeftUserDeleteAccount">
+            <button
+              className="dashboardLeftUserDeleteAccount"
+              onClick={() => deleteAccount()}
+            >
               Delete Account
             </button>
           </div>
         </div>
       </div>
       <div className="dashboardRight">
-        <EditProfile />
+        <div className="dashboardRightTabs">
+          <button
+            className={tab === "useritems" ? "active" : ""}
+            onClick={() => setTab("useritems")}
+          >
+            User Items
+          </button>
+        </div>
+        {tab === "profile" && <EditProfile />}
+        {tab === "useritems" && <>User Items</>}
       </div>
     </div>
   );
