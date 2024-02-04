@@ -1,14 +1,17 @@
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap");
+
 body {
   line-height: 1.5;
   font-family: "Poppins", sans-serif;
 }
+
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
-.container {
+
+.footer .container {
   max-width: 1170px;
   margin: 0 auto;
   padding: 20px;
@@ -16,35 +19,42 @@ body {
   flex-direction: column;
   justify-content: center;
 }
-.container h3 {
+
+.footer .container h3 {
   text-align: center;
   color: white;
   font-weight: 500;
   margin-bottom: 35px;
 }
-.container .p {
+
+.footer .container .p {
   margin-bottom: 35px;
   text-align: center;
   color: #bbbbbb;
   font-weight: 200;
 }
-.container .copy {
+
+.footer .container .copy {
   text-align: center;
   color: #bbbbbb;
   font-weight: 200;
   margin-top: 80px;
 }
+
 .row {
   display: flex;
   flex-wrap: wrap;
 }
+
 ul {
   list-style: none;
 }
+
 .footer {
   background-color: #24262b;
   padding: 70px 0;
 }
+
 .footer-col {
   width: 33%;
   padding: 0 15px;
@@ -54,6 +64,7 @@ ul {
   justify-content: center;
 
 }
+
 .footer-col h4 {
   font-size: 18px;
   color: #ffffff;
@@ -62,6 +73,7 @@ ul {
   font-weight: 500;
   position: relative;
 }
+
 .footer-col h4::before {
   content: "";
   position: absolute;
@@ -72,9 +84,11 @@ ul {
   box-sizing: border-box;
   width: 50px;
 }
+
 .footer-col ul li:not(:last-child) {
   margin-bottom: 10px;
 }
+
 .footer-col ul li a {
   font-size: 16px;
   text-transform: capitalize;
@@ -85,6 +99,7 @@ ul {
   display: block;
   transition: all 0.3s ease;
 }
+
 .footer-col p {
   font-size: 16px;
   color: #ffffff;
@@ -93,10 +108,12 @@ ul {
   color: #bbbbbb;
   line-height: 1.5;
 }
+
 .footer-col ul li a:hover {
   color: #ffffff;
   padding-left: 8px;
 }
+
 .footer-col .icons ul li {
   display: inline-block;
   height: 40px;
@@ -109,6 +126,7 @@ ul {
   color: #ffffff;
   transition: all 0.5s ease;
 }
+
 .footer-col .icons ul li:hover {
   color: #24262b;
   background-color: #ffffff;
@@ -121,6 +139,7 @@ ul {
     margin-bottom: 30px;
   }
 }
+
 @media (max-width: 574px) {
   .footer-col {
     width: 100%;
