@@ -4,6 +4,7 @@ import "../css/contact_form.css";
 const Contact_form = () => {
     return (
         <form className="contact-form">
+            <div className="head">Send us a Message today</div>
             <div className="field">
                 <label htmlFor="name">Name:</label>
                 <input type="text" id="name" placeholder="Your Name" required />
@@ -32,7 +33,7 @@ const Contact_form = () => {
                 ></textarea>
             </div>
 
-            <button type="submit" className="green-btn">
+            <button type="submit" className="submit-btn">
                 Send Message
             </button>
         </form>

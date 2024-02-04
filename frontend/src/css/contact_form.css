@@ -1,11 +1,16 @@
 .contact-form {
-  background-color: #f2f2f2;
+  background-color: #1a1a1a;
   margin: 0 auto;
-  padding: 20px;
-  width: 70%;
+  padding: 20px 40px;
+  width: 100%;
   max-width: auto;
-  border-radius: 5px;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  border-radius: 10px;
+  box-shadow: 0px 5px 70px 0px rgb(23, 23, 23);
+}
+
+.contact-form .head {
+  margin: 30px 0 20px;
+  color: white;
 }
 
 .field {
@@ -14,9 +19,10 @@
 
 .field label {
   display: block;
-  margin-bottom: 8px;
-  font-weight: bold;
-  color: #333;
+  font-size: 12px;
+  margin-bottom: 4px;
+  font-family: "roboto", sans-serif;
+  color: rgb(255, 255, 255);
 }
 
 .field input,
@@ -24,20 +30,29 @@
   width: 100%;
   padding: 10px;
   box-sizing: border-box;
-  border: 1px solid #ccc;
-  border-radius: 4px;
-  background-color: #f8f8f8;
+  border: 1px solid rgb(43, 43, 43);
+  border-radius: 5px;
+  font-size: 12px;
+  background-color: #222222;
   transition: border-color 0.3s ease;
   outline: none;
 }
 
 .field input {
-  height: 40px;
+  height: 30px;
+}
+
+input,
+select,
+textarea {
+  color: white;
 }
 
 .field input:focus,
 .field textarea:focus {
-  border-color: #007bff;
+  border-color: rgb(126, 58, 13);
+  color: #ffffff;
+  background-color: #222222;
 }
 
 .field textarea {
@@ -45,20 +60,22 @@
   resize: none;
 }
 
-.green-btn {
-  background-color: #4caf50;
+.submit-btn {
+  background-color: rgb(126, 58, 13);
   border: none;
+  width: 100%;
   color: white;
+  margin-bottom: 90px;
   padding: 10px 20px;
   text-align: center;
   text-decoration: none;
   display: inline-block;
   font-size: 16px;
-  border-radius: 4px;
+  border-radius: 10px;
   cursor: pointer;
   transition: background-color 0.3s ease;
 }
 
-.green-btn:hover {
-  background-color: #45a049;
+.submit-btn:hover {
+  background-color: rgb(145, 76, 30);
 }

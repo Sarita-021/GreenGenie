@@ -125,28 +125,19 @@ const Home = () => {
 
                 {/* Contact us */}
                 <div className="contact-wrap">
-                    <h2>Connect with GreenGenie</h2>
-                    <p>Have questions, suggestions, or just want to say hello? We'd love to hear from you! Drop us a message using the form below or reach out directly through our various channels. </p>
-
-                    <Contact_form />
-
-                    <div className="contact-details">
-                        <h2>Get in Touch Directly</h2>
-
-                        <ul>
-                            {contact_details.map((item, index) => (
-                                <li key={index}>
-                                    <span className="icon">
-                                        <i className={item.icon}></i>
-                                    </span>
-                                    <span>{item.type}</span>
-                                    <a>{item.value}</a>
-                                </li>
-                            ))}
-                        </ul>
+                    <div className="tilt-line"></div>
+                    <div className="flex-container">
+                        <div className="form">
+                            <Contact_form />
+                        </div>
+                        <div className="heading">
+                            <h3>Contact</h3>
+                            {/* <h2>Connect with GreenGenie</h2> */}
+                            <h2>Get in touch with us today and our team will assist you</h2>
+                            <p>Have questions, suggestions, or just want to say hello? We'd love to hear from you! Drop us a message using the form below or reach out directly through our various channels. </p>
+                        </div>
                     </div>
                 </div>
-
 
                 {/* freqently asked questions */}
                 <div className="faq">
