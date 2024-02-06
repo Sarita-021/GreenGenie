@@ -355,7 +355,7 @@
 }
 
 /* get in touch */
-.contact-details {
+/* .contact-details {
   padding: 20px;
 }
 
@@ -392,137 +392,78 @@
 
 .contact-details a {
   text-decoration: none;
-  color: #007bff;
-  /* Blue color for links */
-}
+  color: #007bff; */
+/* Blue color for links */
+/* } */
 
 /* Link hover effect */
-.contact-details a:hover {
-  text-decoration: underline;
+/* .contact-details a:hover { */
+/* text-decoration: underline; */
+/* } */
+
+/* FAQ QUESTIONS */
+
+.faqSection {
+  margin: 100px 0;
 }
 
-/*/* Recent Blogs section */
-.blog-section {
-  max-width: auto;
-  margin: 0 auto;
-  padding: 20px;
-  background-color: #f8f8f8;
-  border-radius: 10px;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-}
-
-/* Blog section titles */
-.blog-section h3 {
-  font-size: 2rem;
-  font-family: "Times New Roman", Times, serif;
+.faqSection h2 {
   text-align: center;
-  margin-bottom: 20px;
+  font-size: 40px;
+  font-family: "Merriweather", Sans-serif;
+  margin-bottom: 30px;
   color: #333;
 }
 
-/* Blog list styling */
-.blog-list {
-  list-style-type: none;
-  padding: 0;
-  margin: 0;
-}
-
-/* Individual blog post item styling */
-.blog-list li {
-  margin-bottom: 20px;
+.faqSection .faqs {
+  width: 100%;
+  max-width: 768px;
+  margin: 0 auto;
   padding: 15px;
-  background-color: #fff;
-  border-radius: 5px;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 
-/* Blog post title styling */
-.blog-list li a {
-  text-decoration: none;
-  color: #007bff;
-  /* Blue color for links */
+.faqSection .faqs .faq {
+  margin: 15px;
+  padding: 15px;
+  background: #fff;
+  border-radius: 10px;
+  box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.1);
 }
 
-/* Blog post title hover effect */
-.blog-list li a:hover {
-  text-decoration: underline;
+.faqSection .faqs .faq .faq-question {
+  position: relative;
+  font-size: 20px;
+  padding-right: 80px;
+  transition: all 0.4s ease;
 }
 
-/* Blog post content styling */
-.blog-list li p {
-  color: #555;
-  margin-top: 10px;
+.faqSection .faqs .faq .faq-question::after {
+  content: "+";
+  position: absolute;
+  top: 50%;
+  right: 0px;
+  transform: translateY(-50%);
+  width: 30px;
+  height: 30px;
+  transition: all 0.2s ease;
 }
 
-/* "See More" button styling */
-.see-more-btn {
-  display: inline-block;
-  padding: 10px 20px;
-  margin-top: 20px;
-  text-decoration: none;
-  background-color: #007bff;
-  /* Blue color for the button */
-  color: #fff;
-  border-radius: 5px;
-  transition: background-color 0.3s ease;
+.faqSection .faqs .faq .faq-answer {
+  opacity: 0;
+  max-height: 0;
+  overflow: hidden;
+  transition: all 0.2s ease;
 }
 
-.see-more-btn:hover {
-  background-color: #0056b3;
-  /* Darker blue color on hover */
-}
-
-/* FAQ QUESTIONS */
-.faq {
-  background-color: gainsboro;
-  padding: 10px;
-}
-
-.faq h2 {
-  font-size: 2.8rem;
-  font-family: "Times New Roman", Times, serif;
-  text-align: center;
-  margin-bottom: 15px;
-  color: blue;
-}
-
-.faq-item {
-  width: 70%;
-  display: flex;
-  flex-direction: column;
-  justify-content: left;
-}
-
-.faq-item li {
-  list-style-type: none;
-  margin: 0;
-  padding: 0;
-  margin: 15px 0;
-}
-
-.faq-item li h3 {
-  font-size: 2rem;
-  font-family: "Times New Roman", Times, serif;
-  font-style: italic;
-  text-align: left;
+.faqSection .faqs .faq.open .faq-question {
   margin-bottom: 15px;
 }
 
-.faq-item li p {
-  margin-left: 30px;
-  font-size: 1.3rem;
-  font-family: "Times New Roman", Times, serif;
-  text-align: left;
-  margin-bottom: 15px;
+.faqSection .faqs .faq.open .faq-question::after {
+  content: "-";
 }
 
-.faq a {
-  font-size: 1.3rem;
-  font-family: "Times New Roman", Times, serif;
-  margin: 10px 5px;
-  text-decoration: none;
-  color: blue;
-  background-color: aliceblue;
-  padding: 10px;
-  border-radius: 5px;
+.faqSection .faqs .faq.open .faq-answer {
+  max-height: 1000px;
+  opacity: 1;
 }

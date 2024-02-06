@@ -97,30 +97,44 @@ export const blog_list = [
 
 export const faq = [
     {
+        "key": "0",
+        "open": "faq open",
         "question": "Why choose GreenGenie to sell your clothes?",
         "answer": "GreenGenie takes the hassle out of decluttering your wardrobe! Get fair prices for your pre-loved clothes, enjoy online convenience with doorstep pick-up, and choose a destination that aligns with your values, be it supporting NGOs or contributing to sustainable recycling."
     },
     {
+        "key": "1",
+        "open": "faq",
         "question": "How fast is the approval process for listing clothes?",
         "answer": "Expect a decision on your clothing within 48 hours of submitting them. We work hard to get your items listed and ready to find a new home!"
     },
     {
+        "key": "2",
+        "open": "faq",
         "question": "Who buys my clothes on GreenGenie?",
         "answer": "Your pre-loved treasures can find new life through various channels. We partner with ethical recycling factories, responsible NGOs, and other registered users seeking sustainable wardrobe options."
     },
     {
+        "key": "3",
+        "open": "faq",
         "question": "What about my payment?",
         "answer": "Once your clothes find a buyer, the sale proceeds are securely deposited into your bank account within 15 days. Relax and let GreenGenie handle the transaction process."
     },
     {
+        "key": "4",
+        "open": "faq",
         "question": "Can I donate clothes instead of selling them?",
         "answer": "Absolutely! GreenGenie makes it easy to donate your unwanted clothes to worthy causes. Simply choose the 'Donate' option when listing your items, and we'll ensure they reach the appropriate NGOs."
     },
     {
+        "key": "5",
+        "open": "faq",
         "question": "What types of clothes do you accept?",
         "answer": "We welcome a wide range of gently used clothing, shoes, and accessories. Check our website for guidelines on acceptable items and condition requirements."
     },
     {
+        "key": "6",
+        "open": "faq",
         "question": "How can I learn more about GreenGenie's impact?",
         "answer": "Visit our 'About Us' page or explore our blog for stories about the positive impact we're making on the environment and communities. We're always happy to share our passion for sustainable fashion!"
     }

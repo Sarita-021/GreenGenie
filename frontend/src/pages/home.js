@@ -1,12 +1,48 @@
-import React from "react";
+import React, { useState } from "react";
 import "../css/home.css";
 import Contact_form from "../components/contact_form";
 import { blog_list, clients, contact_details, faq, review, trends } from "../Data/details";
 import Search_form from "../components/search_form";
 import { NavLink } from "react-router-dom";
 import { AiFillStar } from "react-icons/ai";
+import Accordion from 'react-bootstrap/Accordion';
+
+
+// const FAQ = (faq, index, toggleFAQ) => {
+//     return (
+//         <div
+//             className={"faq " + (faq.open ? "open" : "")}
+//             key={index}
+//             onClick={() => toggleFAQ(index)}
+//         >
+//             <div className="faq-question">{faq.question}</div>
+//             <div className="faq-answer">{faq.answer}</div>
+//         </div>
+//     );
+// };
 
 const Home = () => {
+
+    const [faqs, setFaqs] = useState([
+        faq
+    ])
+
+    const toggleFAQ = index => {
+        setFaqs(
+            faq.map((faq, i) => {
+                if (i === index) {
+                    if (faq.open === "faq open") {
+                        faq.open = "faq";
+                    } else {
+                        faq.open = "faq open";
+                    }
+                } else {
+                    faq.open = "faq";
+                }
+                return faq;
+            }))
+    }
+
     return (
         <>
             <div className="home">
@@ -140,22 +176,23 @@ const Home = () => {
                 </div>
 
                 {/* freqently asked questions */}
-                <div className="faq">
+                <div className="faqSection">
                     <h2>GreenGenie's FAQs</h2>
+                    <div className="faqs">
+                        {faq.map((faq, index) => (
+                            (
+                                <div className={faq.open} key={index} onClick={() => toggleFAQ(index)} >
+                                    <div className="faq-question">{faq.question}</div>
+                                    <div className="faq-answer">{faq.answer}</div>
+                                </div>
+                            )
 
-                    <div className="faq-item">
-                        {faq.map((item, index) => (
-                            <li key={index}>
-                                <h3>{item.question}</h3>
-                                <p>{item.answer}</p>
-                            </li>
                         ))}
                     </div>
-                    <a href="/faq" className="see-more-btn">
-                        Get More Answers
-                    </a>
+
+
                 </div>
-            </div >
+            </div>
         </>
     );
 };
