@@ -2,11 +2,11 @@ import React from "react";
 import "../css/footer.css";
 import { Outlet } from "react-router-dom";
 import {
-  FaFacebook,
+  FaFacebookF,
   FaTwitter,
   FaGoogle,
   FaYoutube,
-  FaLinkedin,
+  FaLinkedinIn,
 } from "react-icons/fa";
 
 const Footer = () => {
@@ -60,7 +60,7 @@ const Footer = () => {
               <div className="icons">
                 <ul className="socials">
                   <li>
-                    <FaFacebook size={24} aria-label="Facebook" />
+                    <FaFacebookF size={24} aria-label="Facebook" />
                   </li>
                   <li>
                     <FaTwitter size={24} aria-label="Twitter" />
@@ -72,7 +72,7 @@ const Footer = () => {
                     <FaYoutube size={24} aria-label="YouTube" />
                   </li>
                   <li>
-                    <FaLinkedin size={24} aria-label="LinkedIn" />
+                    <FaLinkedinIn size={24} aria-label="LinkedIn" />
                   </li>
                 </ul>
               </div>
