@@ -15,7 +15,7 @@ const About = () => {
         <div className="about-container">
           <div className="contact-section">
             <div className="contact-details">
-              <h1>How To Find Us </h1>
+              <h1>Find Us </h1>
               <ul>
                 <li>
                   <span className="icon">
