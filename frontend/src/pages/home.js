@@ -7,20 +7,6 @@ import { NavLink } from "react-router-dom";
 import { AiFillStar } from "react-icons/ai";
 import Accordion from 'react-bootstrap/Accordion';
 
-
-// const FAQ = (faq, index, toggleFAQ) => {
-//     return (
-//         <div
-//             className={"faq " + (faq.open ? "open" : "")}
-//             key={index}
-//             onClick={() => toggleFAQ(index)}
-//         >
-//             <div className="faq-question">{faq.question}</div>
-//             <div className="faq-answer">{faq.answer}</div>
-//         </div>
-//     );
-// };
-
 const Home = () => {
 
     const [faqs, setFaqs] = useState([
@@ -168,7 +154,6 @@ const Home = () => {
                         </div>
                         <div className="heading">
                             <h3>Contact</h3>
-                            {/* <h2>Connect with GreenGenie</h2> */}
                             <h2>Get in touch with us today and our team will assist you</h2>
                             <p>Have questions, suggestions, or just want to say hello? We'd love to hear from you! Drop us a message using the form below or reach out directly through our various channels. </p>
                         </div>

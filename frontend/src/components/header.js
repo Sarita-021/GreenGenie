@@ -18,11 +18,7 @@ const navigation = [
     {
         name: "About Us",
         path: "/about",
-    },
-    {
-        name: "Contact Us",
-        path: "/contact",
-    },
+    }
 ];
 
 
@@ -32,7 +28,7 @@ const Header = () => {
     let isLogin = localStorage.getItem('islogin');
     const logout = () => {
         localStorage.clear();
-        window.location.href='/';
+        window.location.href = '/';
     }
 
     useEffect(() => {
