@@ -11,58 +11,31 @@ body {
   box-sizing: border-box;
 }
 
-.footer .container {
-  max-width: 1170px;
-  margin: 0 auto;
-  padding: 20px;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-}
-
-.footer .container h3 {
-  text-align: center;
-  color: white;
-  font-weight: 500;
-  margin-bottom: 35px;
-}
-
-.footer .container .p {
-  margin-bottom: 35px;
-  text-align: center;
-  color: #bbbbbb;
-  font-weight: 200;
-}
-
-.footer .container .copy {
-  text-align: center;
-  color: #bbbbbb;
-  font-weight: 200;
-  margin-top: 80px;
-}
-
-.row {
-  display: flex;
-  flex-wrap: wrap;
-}
-
-ul {
-  list-style: none;
-}
-
 .footer {
   background-color: #24262b;
-  padding: 70px 0;
+  padding: 50px 0 5px;
 }
 
-.footer-col {
-  width: 33%;
-  padding: 0 15px;
-  flex-wrap: nowrap;
+.footer .container {
+  max-width: 1170px;
+  margin: 0 7% 30px;
+  padding: 15px;
   display: flex;
-  flex-direction: column;
-  justify-content: center;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: top;
+  align-content: top;
+}
 
+.footer .p {
+  margin-bottom: 35px;
+  text-align: center;
+  color: #ffffff;
+  font-weight: 200;
+}
+
+.footer ul {
+  list-style: none;
 }
 
 .footer-col h4 {
@@ -83,10 +56,6 @@ ul {
   height: 2px;
   box-sizing: border-box;
   width: 50px;
-}
-
-.footer-col ul li:not(:last-child) {
-  margin-bottom: 10px;
 }
 
 .footer-col ul li a {
@@ -115,12 +84,13 @@ ul {
 }
 
 .footer-col .icons ul li {
-  display: inline-block;
-  height: 40px;
-  width: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 35px;
+  width: 35px;
   background-color: rgba(255, 255, 255, 0.2);
   margin: 0 10px 10px 0;
-  padding-top: 7px;
   text-align: center;
   line-height: 40px;
   border-radius: 50%;
@@ -131,6 +101,15 @@ ul {
 .footer-col .icons ul li:hover {
   color: #24262b;
   background-color: #ffffff;
+}
+
+.footer .copy-right {
+  text-align: center;
+}
+
+.footer .copy-right span {
+  color: #767676;
+  font-size: 13px;
 }
 
 /*responsive*/
